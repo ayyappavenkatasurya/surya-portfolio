@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayyappa Venkata Surya - Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* Google-inspired styles */
+        :root {
+            --google-blue: #4285f4;
+            --google-red: #ea4335;
+            --google-yellow: #fbbc05;
+            --google-green: #34a853;
+            --google-gray: #5f6368;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background: #fff;
+            color: #202124;
+            line-height: 1.6;
+        }
+
+        .google-font {
+            font-family: 'Google Sans', sans-serif;
+        }
+
+        /* Navigation */
+        nav {
+            background: #fff;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            padding: 8px 24px;
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-size: 22px;
+            font-weight: 500;
+            color: var(--google-gray);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-links a {
+            color: var(--google-gray);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 24px;
+            transition: background 0.2s;
+        }
+
+        .nav-links a:hover {
+            background: #f1f3f4;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 24px 80px;
+            background: #f8f9fa;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            color: #202124;
+            margin-bottom: 16px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--google-gray);
+            margin-bottom: 32px;
+        }
+
+        .google-button {
+            background: var(--google-blue);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 24px;
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-block;
+            margin: 8px;
+            transition: box-shadow 0.2s;
+        }
+
+        .google-button:hover {
+            box-shadow: 0 2px 6px rgba(66,133,244,0.4);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 24px;
+        }
+
+        .section-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 32px;
+            color: #202124;
+            margin-bottom: 48px;
+            text-align: center;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-bottom: 48px;
+        }
+
+        .skill-card {
+            background: white;
+            border-radius: 8px;
+            padding: 24px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+            transition: box-shadow 0.2s;
+        }
+
+        .skill-card:hover {
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .skill-card h3 {
+            color: var(--google-blue);
+            margin-bottom: 16px;
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+            transition: transform 0.2s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .project-content {
+            padding: 24px;
+        }
+
+        .project-title {
+            color: #202124;
+            margin-bottom: 12px;
+        }
+
+        .project-description {
+            color: var(--google-gray);
+            margin-bottom: 16px;
+        }
+
+        .tag {
+            background: #f1f3f4;
+            color: var(--google-gray);
+            padding: 4px 12px;
+            border-radius: 16px;
+            font-size: 12px;
+            margin-right: 8px;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 32px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--google-gray);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #dadce0;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--google-blue);
+        }
+
+        /* Footer */
+        footer {
+            background: #f8f9fa;
+            padding: 48px 24px;
+            text-align: center;
+        }
+
+        .social-links {
+            margin-top: 24px;
+        }
+
+        .social-links a {
+            color: var(--google-gray);
+            margin: 0 12px;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            color: var(--google-blue);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+        }
+
+        
+        .profile-picture-container {
+            margin-bottom: 24px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile-picture {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 0.2px solid white;
+            box-shadow: 0 3px 9px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-picture:hover {
+            transform: scale(1.05);
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-content">
+            <a href="#" class="nav-logo google-font">A.V. Surya</a>
+            <div class="nav-links google-font">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="profile-picture-container">
+                <img src="https://boosterpad.vercel.app/author.png" alt="Ayyappa Venkata Surya" class="profile-picture">
+            </div>
+            <h1 class="google-font">Nallamothu Ayyappa Venkata Surya</h1>
+            <p>AI & Data Science Student | Web Developer</p>
+            <div>
+                <a href="mailto:ayyappanallamothu4@gmail.com" class="google-button" style="background: #000000;">Contact Me</a>
+                <a href="https://linkedin.com/in/ayyappa-venkata-surya-nallamothu" class="google-button" style="background: #275ae7;">LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="section-content">
+            <h2 class="section-title google-font">About Me</h2>
+            <div class="skill-card">
+                <p style="margin-bottom: 24px;">
+                    A driven and enthusiastic individual pursuing B.Tech in Artificial Intelligence & Data Science at Seshadri Rao Gudlavalleru Engineering College. With a CGPA of 8.96/10, I am passionate about designing scalable web applications and leveraging AI to solve real-world problems.
+                </p>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+                    <div>
+                        <h3 class="google-font">Education</h3>
+                        <div style="margin-bottom: 16px;">
+                            <p style="font-weight: 500;">B.Tech in AI & Data Science</p>
+                            <p>Seshadri Rao Gudlavalleru Engineering College</p>
+                            <p style="color: var(--google-gray);">2022 - 2025 | CGPA: 8.96/10</p>
+                        </div>
+                        <div>
+                            <p style="font-weight: 500;">Intermediate, MPC</p>
+                            <p>Sri Chaitanya Junior College</p>
+                            <p style="color: var(--google-gray);">2020 - 2022 | Percentage: 92.5%</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="google-font">Languages</h3>
+                        <div style="display: flex; margin-bottom: 8px;">
+                            <span style="width: 80px;">English:</span>
+                            <span style="color: var(--google-gray);">Fluent</span>
+                        </div>
+                        <div style="display: flex;">
+                            <span style="width: 80px;">Telugu:</span>
+                            <span style="color: var(--google-gray);">Native</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" style="background: #f8f9fa;">
+        <div class="section-content">
+            <h2 class="section-title google-font">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3 class="google-font">Programming Languages</h3>
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <div style="display: flex; align-items: center;">
+                            <i class="fab fa-python" style="color: var(--google-blue); margin-right: 12px;"></i>
+                            Python
+                        </div>
+                        <div style="display: flex; align-items: center;">
+                            <i class="fas fa-code" style="color: var(--google-blue); margin-right: 12px;"></i>
+                            C
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3 class="google-font">Web Technologies</h3>
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <div style="display: flex; align-items: center;">
+                            <i class="fab fa-html5" style="color: var(--google-blue); margin-right: 12px;"></i>
+                            HTML
+                        </div>
+                        <div style="display: flex; align-items: center;">
+                            <i class="fab fa-css3-alt" style="color: var(--google-blue); margin-right: 12px;"></i>
+                            CSS
+                        </div>
+                        <div style="display: flex; align-items: center;">
+                            <i class="fab fa-js" style="color: var(--google-blue); margin-right: 12px;"></i>
+                            JavaScript
+                        </div>
+                        <div style="display: flex; align-items: center;">
+                            <i class="fab fa-node" style="color: var(--google-blue); margin-right: 12px;"></i>
+                            NodeJS
+                        </div>
+                        <div style="display: flex; align-items: center;">
+                            <i class="fab fa-react" style="color: var(--google-blue); margin-right: 12px;"></i>
+                            ReactJS
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3 class="google-font">Databases</h3>
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <div style="display: flex; align-items: center;">
+                            <i class="fas fa-database" style="color: var(--google-blue); margin-right: 12px;"></i>
+                            MongoDB
+                        </div>
+                        <div style="display: flex; align-items: center;">
+                            <i class="fas fa-database" style="color: var(--google-blue); margin-right: 12px;"></i>
+                            MySQL
+                        </div>
+                        <div style="display: flex; align-items: center;">
+                            <i class="fas fa-database" style="color: var(--google-blue); margin-right: 12px;"></i>
+                            Oracle
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="section-content">
+            <h2 class="section-title google-font">Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title google-font">Medical AI Chatbot</h3>
+                        <p class="project-description">
+                            A web-based AI chatbot designed to assist in diagnosing medical conditions. The application leverages artificial intelligence to provide preliminary medical guidance.
+                        </p>
+                        <div>
+                            <span class="tag">AI</span>
+                            <span class="tag">Web Development</span>
+                            <span class="tag"><a href="https://scrap2predict.vercel.app" style="text-decoration: none;">Click me</a></span>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title google-font">Notebook Web Application</h3>
+                        <p class="project-description">
+                            A cloud-based note-taking applicationwith secure storage. Users can create, edit, and manage their notes with a focus on data security and user privacy.
+                    </p>
+                    <div>
+                        <span class="tag">Web Development</span>
+                        <span class="tag">Cloud Storage</span>
+                        <span class="tag"><a href="https://boosterpad.vercel.app" style="text-decoration: none;">Click me</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" style="background: #f8f9fa;">
+    <div class="section-content">
+        <h2 class="section-title google-font">Get In Touch</h2>
+        <div class="contact-form">
+            <form>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="google-button" style="width: 100%; border: transparent;">Send Message</button>
+            </form>
+        </div>
+        <div style="text-align: center; margin-top: 48px;">
+            <div style="margin-bottom: 24px;">
+                <p style="font-weight: 500; color: #202124;">Contact Information</p>
+                <p style="color: var(--google-gray);">Feel free to reach out through any of these channels</p>
+            </div>
+            <div style="display: flex; justify-content: center; gap: 32px; flex-wrap: wrap;">
+                <a href="mailto:ayyappanallamothu4@gmail.com" style="display: flex; align-items: center; text-decoration: none; color: var(--google-gray);">
+                    <i class="fas fa-envelope" style="margin-right: 8px;"></i>
+                    ayyappanallamothu4@gmail.com
+                </a>
+                <a href="tel:+919392567247" style="display: flex; align-items: center; text-decoration: none; color: var(--google-gray);">
+                    <i class="fas fa-phone" style="margin-right: 8px;"></i>
+                    +91 9392567247
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="section-content">
+        <p style="color: var(--google-gray);">&copy; 2024 Ayyappa Venkata Surya. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://linkedin.com/in/ayyappa-venkata-surya-nallamothu" target="_blank">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/nallamothusurya" target="_blank">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="mailto:ayyappanallamothu4@gmail.com">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Form submission handling
+    document.querySelector('form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        // Add your form submission logic here
+        alert('Thank you for your message! I will get back to you soon.');
+    });
+</script>
+</body>
+</html>
