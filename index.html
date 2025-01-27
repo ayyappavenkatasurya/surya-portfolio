@@ -492,7 +492,7 @@
 
 <footer>
     <div class="section-content">
-        <p style="color: var(--google-gray);">&copy; 2024 Ayyappa Venkata Surya. All rights reserved.</p>
+        <p style="color: var(--google-gray);">&copy; <span id="year"></span> Ayyappa Venkata Surya. All rights reserved.</p>
         <div class="social-links">
             <a href="https://linkedin.com/in/ayyappa-venkata-surya-nallamothu" target="_blank">
                 <i class="fab fa-linkedin"></i>
@@ -524,6 +524,8 @@
         // Add your form submission logic here
         alert('Thank you for your message! I will get back to you soon.');
     });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 </body>
 </html>
