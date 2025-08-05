@@ -18,15 +18,15 @@ View the portfolio live at: [https://surya-nallamothu.netlify.app/](https://sury
 
 ## 📄 Table of Contents
 
-- [About](#about)
-- [Features](#features)
-- [Skills](#skills)
-- [Projects](#projects)
-- [Contact](#contact)
-- [Usage](#usage)
-- [Technologies Used](#technologies-used)
-- [Contributing](#contributing)
-- [License](#license)
+- [About](https://github.com/nallamothusurya)
+- [Features](https://github.com/nallamothusurya)
+- [Skills](https://github.com/nallamothusurya)
+- [Projects](https://github.com/nallamothusurya)
+- [Contact](https://github.com/nallamothusurya)
+- [Usage](https://github.com/nallamothusurya)
+- [Technologies Used](https://github.com/nallamothusurya)
+- [Contributing](https://github.com/nallamothusurya)
+- [License](https://github.com/nallamothusurya)
 
 ---
 
