@@ -23,6 +23,10 @@
             font-family: 'Roboto', sans-serif;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             background: #fff;
             color: #202124;
@@ -162,173 +166,92 @@
         /* Projects Grid */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 24px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 32px;
         }
 
         .project-card {
-            background: rgb(248, 250, 255);
+            background: #fff;
+            border: 1px solid #e0e0e0;
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 1px 3px rgba(0,0,0,0.12);
             transition: transform 0.2s, box-shadow 0.2s;
-            display: flex; /* For footer alignment */
-            flex-direction: column; /* For footer alignment */
+            display: flex;
+            flex-direction: column;
         }
 
         .project-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+
+        .project-preview {
+            width: 100%;
+            aspect-ratio: 16 / 10; /* Maintain a consistent shape */
+            border: none;
+            background: #f8f9fa;
+            pointer-events: none; /* Allows scrolling over the iframe */
         }
 
         .project-content {
-            padding: 24px;
+            padding: 20px;
             display: flex;
             flex-direction: column;
-            height: 100%;
+            flex-grow: 1; /* Ensure content fills space */
         }
 
         .project-title {
             color: #202124;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
         }
 
         .project-description {
             color: var(--google-gray);
+            font-size: 14px;
             margin-bottom: 16px;
-            flex-grow: 1; /* Pushes footer to the bottom */
+            flex-grow: 1; 
         }
         
         .project-footer {
-            margin-top: auto; /* Aligns footer to the bottom */
+            margin-top: auto;
             display: flex;
             justify-content: space-between;
-            align-items: flex-end;
-        }
-
-        .tags-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .tag {
-            background: #e8f0fe;
-            color: #1967d2;
-            padding: 4px 12px;
-            border-radius: 16px;
-            font-size: 12px;
-            font-weight: 500;
-        }
-
-        .project-external-links {
-            display: flex;
-            gap: 16px;
             align-items: center;
         }
 
-        .project-external-links a {
+        .project-links a {
             color: var(--google-gray);
-            font-size: 20px;
+            font-size: 22px;
             text-decoration: none;
             transition: color 0.2s;
+            margin-left: 16px;
         }
 
-        .project-external-links a:hover {
+        .project-links a:hover {
             color: var(--google-blue);
         }
 
-        /* Contact Form */
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 32px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.12);
-        }
 
-        .form-group {
-            margin-bottom: 24px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            color: var(--google-gray);
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #dadce0;
-            border-radius: 4px;
-            font-size: 16px;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--google-blue);
-        }
-
-        /* Footer */
-        footer {
-            background: #f8f9fa;
-            padding: 48px 24px;
-            text-align: center;
-        }
-
-        .social-links {
-            margin-top: 24px;
-        }
-
-        .social-links a {
-            color: var(--google-gray);
-            margin: 0 12px;
-            font-size: 20px;
-            text-decoration: none;
-        }
-
-        .social-links a:hover {
-            color: var(--google-blue);
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hero h1 {
-                font-size: 36px;
-            }
-        }
-
-        
-        .profile-picture-container {
-            margin-bottom: 24px;
-            display: flex;
-            justify-content: center;
-        }
-
-        .profile-picture {
-            width: 250px;
-            height: 250px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 0.2px solid white;
-            box-shadow: 0 3px 9px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .profile-picture:hover {
-            transform: scale(1.05);
-        }
+        /* Contact Form and other styles remain the same... */
+        .contact-form { max-width: 600px; margin: 0 auto; padding: 32px; background: white; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.12); }
+        .form-group { margin-bottom: 24px; }
+        .form-group label { display: block; margin-bottom: 8px; color: var(--google-gray); }
+        .form-group input, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #dadce0; border-radius: 4px; font-size: 16px; }
+        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--google-blue); }
+        footer { background: #f8f9fa; padding: 48px 24px; text-align: center; }
+        .social-links { margin-top: 24px; }
+        .social-links a { color: var(--google-gray); margin: 0 12px; font-size: 20px; text-decoration: none; }
+        .social-links a:hover { color: var(--google-blue); }
+        @media (max-width: 768px) { .nav-links { display: none; } .hero h1 { font-size: 36px; } }
+        .profile-picture-container { margin-bottom: 24px; display: flex; justify-content: center; }
+        .profile-picture { width: 250px; height: 250px; border-radius: 50%; object-fit: cover; border: 0.2px solid white; box-shadow: 0 3px 9px rgba(0,0,0,0.1); transition: transform 0.3s ease; }
+        .profile-picture:hover { transform: scale(1.05); }
 
     </style>
 </head>
 <body>
+    <!-- Navigation, Hero, About, Skills sections are unchanged -->
     <nav>
         <div class="nav-content">
             <a href="#" class="nav-logo google-font">A.V. Surya</a>
@@ -340,7 +263,6 @@
             </div>
         </div>
     </nav>
-
     <section class="hero">
         <div class="hero-content">
             <div class="profile-picture-container">
@@ -354,7 +276,6 @@
             </div>
         </div>
     </section>
-
     <section id="about">
         <div class="section-content">
             <h2 class="section-title google-font">About Me</h2>
@@ -391,7 +312,6 @@
             </div>
         </div>
     </section>
-
     <section id="skills" style="background: #f8f9fa;">
         <div class="section-content">
             <h2 class="section-title google-font">Technical Skills</h2>
@@ -399,56 +319,26 @@
                 <div class="skill-card">
                     <h3 class="google-font">Programming Languages</h3>
                     <div style="display: flex; flex-direction: column; gap: 12px;">
-                        <div style="display: flex; align-items: center;">
-                            <i class="fab fa-python" style="color: var(--google-blue); margin-right: 12px;"></i>
-                            Python
-                        </div>
-                        <div style="display: flex; align-items: center;">
-                            <i class="fas fa-code" style="color: var(--google-blue); margin-right: 12px;"></i>
-                            C
-                        </div>
+                        <div style="display: flex; align-items: center;"><i class="fab fa-python" style="color: var(--google-blue); margin-right: 12px;"></i>Python</div>
+                        <div style="display: flex; align-items: center;"><i class="fas fa-code" style="color: var(--google-blue); margin-right: 12px;"></i>C</div>
                     </div>
                 </div>
                 <div class="skill-card">
                     <h3 class="google-font">Web Technologies</h3>
                     <div style="display: flex; flex-direction: column; gap: 12px;">
-                        <div style="display: flex; align-items: center;">
-                            <i class="fab fa-html5" style="color: var(--google-blue); margin-right: 12px;"></i>
-                            HTML
-                        </div>
-                        <div style="display: flex; align-items: center;">
-                            <i class="fab fa-css3-alt" style="color: var(--google-blue); margin-right: 12px;"></i>
-                            CSS
-                        </div>
-                        <div style="display: flex; align-items: center;">
-                            <i class="fab fa-js" style="color: var(--google-blue); margin-right: 12px;"></i>
-                            JavaScript
-                        </div>
-                        <div style="display: flex; align-items: center;">
-                            <i class="fab fa-node" style="color: var(--google-blue); margin-right: 12px;"></i>
-                            NodeJS
-                        </div>
-                        <div style="display: flex; align-items: center;">
-                            <i class="fab fa-react" style="color: var(--google-blue); margin-right: 12px;"></i>
-                            ReactJS
-                        </div>
+                        <div style="display: flex; align-items: center;"><i class="fab fa-html5" style="color: var(--google-blue); margin-right: 12px;"></i>HTML</div>
+                        <div style="display: flex; align-items: center;"><i class="fab fa-css3-alt" style="color: var(--google-blue); margin-right: 12px;"></i>CSS</div>
+                        <div style="display: flex; align-items: center;"><i class="fab fa-js" style="color: var(--google-blue); margin-right: 12px;"></i>JavaScript</div>
+                        <div style="display: flex; align-items: center;"><i class="fab fa-node" style="color: var(--google-blue); margin-right: 12px;"></i>NodeJS</div>
+                        <div style="display: flex; align-items: center;"><i class="fab fa-react" style="color: var(--google-blue); margin-right: 12px;"></i>ReactJS</div>
                     </div>
                 </div>
                 <div class="skill-card">
                     <h3 class="google-font">Databases</h3>
                     <div style="display: flex; flex-direction: column; gap: 12px;">
-                        <div style="display: flex; align-items: center;">
-                            <i class="fas fa-database" style="color: var(--google-blue); margin-right: 12px;"></i>
-                            MongoDB
-                        </div>
-                        <div style="display: flex; align-items: center;">
-                            <i class="fas fa-database" style="color: var(--google-blue); margin-right: 12px;"></i>
-                            MySQL
-                        </div>
-                        <div style="display: flex; align-items: center;">
-                            <i class="fas fa-database" style="color: var(--google-blue); margin-right: 12px;"></i>
-                            Oracle
-                        </div>
+                        <div style="display: flex; align-items: center;"><i class="fas fa-database" style="color: var(--google-blue); margin-right: 12px;"></i>MongoDB</div>
+                        <div style="display: flex; align-items: center;"><i class="fas fa-database" style="color: var(--google-blue); margin-right: 12px;"></i>MySQL</div>
+                        <div style="display: flex; align-items: center;"><i class="fas fa-database" style="color: var(--google-blue); margin-right: 12px;"></i>Oracle</div>
                     </div>
                 </div>
             </div>
@@ -461,14 +351,12 @@
             <div class="projects-grid">
                 
                 <div class="project-card">
+                    <iframe class="project-preview" src="https://miniappecom.vercel.app/" title="Mini E-commerce Platform Preview" loading="lazy"></iframe>
                     <div class="project-content">
                         <h3 class="project-title google-font">Mini E-commerce Platform</h3>
-                        <p class="project-description">A compact and functional e-commerce application demonstrating product display, cart management, and user interaction.</p>
+                        <p class="project-description">A compact e-commerce app demonstrating product display, cart management, and user interaction.</p>
                         <div class="project-footer">
-                            <div class="tags-container">
-                                <span class="tag">E-commerce</span><span class="tag">React</span>
-                            </div>
-                            <div class="project-external-links">
+                            <div class="project-links">
                                 <a href="https://miniappecom.vercel.app/" target="_blank" rel="noopener noreferrer" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
                                 <a href="https://github.com/ayyappavenkatasurya/surya-ecommerce" target="_blank" rel="noopener noreferrer" title="View Code"><i class="fab fa-github"></i></a>
                             </div>
@@ -477,14 +365,12 @@
                 </div>
                 
                 <div class="project-card">
+                    <iframe class="project-preview" src="https://surya-gecchatbot.vercel.app/" title="GEC College AI Chatbot Preview" loading="lazy"></iframe>
                     <div class="project-content">
                         <h3 class="project-title google-font">GEC College AI Chatbot</h3>
-                        <p class="project-description">An intelligent chatbot designed for Gudlavalleru Engineering College to answer student queries and provide information using AI.</p>
+                        <p class="project-description">An intelligent chatbot for Gudlavalleru Engineering College to answer student queries using AI.</p>
                         <div class="project-footer">
-                            <div class="tags-container">
-                                <span class="tag">AI</span><span class="tag">Chatbot</span><span class="tag">NLP</span>
-                            </div>
-                            <div class="project-external-links">
+                            <div class="project-links">
                                 <a href="https://surya-gecchatbot.vercel.app/" target="_blank" rel="noopener noreferrer" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
                                 <a href="https://github.com/ayyappavenkatasurya/surya-gecchatbot" target="_blank" rel="noopener noreferrer" title="View Code"><i class="fab fa-github"></i></a>
                             </div>
@@ -493,14 +379,12 @@
                 </div>
                 
                 <div class="project-card">
+                    <iframe class="project-preview" src="https://bujjiaisearch.vercel.app/" title="Bujji AI Search Engine Preview" loading="lazy"></iframe>
                     <div class="project-content">
                         <h3 class="project-title google-font">Bujji AI Search Engine</h3>
-                        <p class="project-description">An AI-enhanced search engine prototype that provides intelligent and context-aware search results, improving relevance.</p>
+                        <p class="project-description">An AI-enhanced search engine providing intelligent and context-aware results for improved relevance.</p>
                         <div class="project-footer">
-                            <div class="tags-container">
-                                <span class="tag">AI</span><span class="tag">Search</span><span class="tag">Web App</span>
-                            </div>
-                            <div class="project-external-links">
+                            <div class="project-links">
                                 <a href="https://bujjiaisearch.vercel.app/" target="_blank" rel="noopener noreferrer" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
                                 <a href="https://github.com/nallamothusurya/surya-bujji-ai-search" target="_blank" rel="noopener noreferrer" title="View Code"><i class="fab fa-github"></i></a>
                             </div>
@@ -509,14 +393,12 @@
                 </div>
                 
                 <div class="project-card">
+                    <iframe class="project-preview" src="https://chitti-zeta.vercel.app/" title="Chitti AI Assistant Preview" loading="lazy"></iframe>
                     <div class="project-content">
                         <h3 class="project-title google-font">Chitti AI Assistant</h3>
-                        <p class="project-description">An interactive AI assistant/chatbot, inspired by popular sci-fi concepts, built to engage with users in a conversational manner.</p>
+                        <p class="project-description">An interactive AI assistant built to engage with users in a friendly, conversational manner.</p>
                         <div class="project-footer">
-                            <div class="tags-container">
-                                <span class="tag">AI</span><span class="tag">Chatbot</span><span class="tag">JS</span>
-                            </div>
-                            <div class="project-external-links">
+                            <div class="project-links">
                                 <a href="https://chitti-zeta.vercel.app/" target="_blank" rel="noopener noreferrer" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
                                 <a href="https://github.com/nallamothusurya/surya-bujji-robot" target="_blank" rel="noopener noreferrer" title="View Code"><i class="fab fa-github"></i></a>
                             </div>
@@ -525,14 +407,12 @@
                 </div>
 
                 <div class="project-card">
+                    <iframe class="project-preview" src="https://surya-virtual-piano.vercel.app/" title="Interactive Virtual Piano Preview" loading="lazy"></iframe>
                     <div class="project-content">
                         <h3 class="project-title google-font">Interactive Virtual Piano</h3>
-                        <p class="project-description">A responsive virtual piano allowing users to play music directly in their browser with their keyboard or mouse.</p>
+                        <p class="project-description">A responsive virtual piano allowing users to play music directly in their browser with keyboard or mouse.</p>
                         <div class="project-footer">
-                            <div class="tags-container">
-                                <span class="tag">JavaScript</span><span class="tag">Frontend</span>
-                            </div>
-                            <div class="project-external-links">
+                            <div class="project-links">
                                 <a href="https://surya-virtual-piano.vercel.app/" target="_blank" rel="noopener noreferrer" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
                                 <a href="https://github.com/nallamothusurya/surya-virtual-piano" target="_blank" rel="noopener noreferrer" title="View Code"><i class="fab fa-github"></i></a>
                             </div>
@@ -541,58 +421,31 @@
                 </div>
                 
                 <div class="project-card">
+                    <iframe class="project-preview" src="https://camel-radius.vercel.app/" title="Camel Radius Web Tools Preview" loading="lazy"></iframe>
                     <div class="project-content">
                         <h3 class="project-title google-font">Camel Radius - Web Tools</h3>
                         <p class="project-description">A collection of handy web-based utility tools for various tasks, designed for simplicity and efficiency.</p>
                         <div class="project-footer">
-                            <div class="tags-container">
-                                <span class="tag">Web App</span><span class="tag">Utility</span><span class="tag">Tools</span>
-                            </div>
-                            <div class="project-external-links">
+                            <div class="project-links">
                                 <a href="https://camel-radius.vercel.app/" target="_blank" rel="noopener noreferrer" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
                                 <a href="https://github.com/nallamothusurya/surya-camel-tools" target="_blank" rel="noopener noreferrer" title="View Code"><i class="fab fa-github"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3 class="project-title google-font">Smart Bridge Concept</h3>
-                        <p class="project-description">A conceptual web application demonstrating the principles of a smart bridge, potentially for monitoring or simulation.</p>
-                        <div class="project-footer">
-                            <div class="tags-container">
-                                <span class="tag">Simulation</span><span class="tag">Concept</span>
-                            </div>
-                            <div class="project-external-links">
-                                <a href="https://surya-smartbridge.vercel.app/" target="_blank" rel="noopener noreferrer" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
-                                <a href="https://github.com/nallamothusurya/surya-smartbridge" target="_blank" rel="noopener noreferrer" title="View Code"><i class="fab fa-github"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
 
+    <!-- Contact and Footer sections are unchanged -->
     <section id="contact" style="background: #f8f9fa;">
         <div class="section-content">
             <h2 class="section-title google-font">Get In Touch</h2>
             <div class="contact-form">
                 <form action="https://formspree.io/f/your_form_id" method="POST">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="4" required></textarea>
-                    </div>
+                    <div class="form-group"><label for="name">Name</label><input type="text" id="name" name="name" required></div>
+                    <div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email" required></div>
+                    <div class="form-group"><label for="message">Message</label><textarea id="message" name="message" rows="4" required></textarea></div>
                     <button type="submit" class="google-button" style="width: 100%; border: transparent;">Send Message</button>
                 </form>
             </div>
@@ -602,55 +455,26 @@
                     <p style="color: var(--google-gray);">Feel free to reach out through any of these channels</p>
                 </div>
                 <div style="display: flex; justify-content: center; gap: 32px; flex-wrap: wrap;">
-                    <a href="mailto:ayyappanallamothu4@gmail.com" style="display: flex; align-items: center; text-decoration: none; color: var(--google-gray);">
-                        <i class="fas fa-envelope" style="margin-right: 8px;"></i>
-                        ayyappanallamothu4@gmail.com
-                    </a>
-                    <a href="tel:+919392567247" style="display: flex; align-items: center; text-decoration: none; color: var(--google-gray);">
-                        <i class="fas fa-phone" style="margin-right: 8px;"></i>
-                        +91 9392567247
-                    </a>
+                    <a href="mailto:ayyappanallamothu4@gmail.com" style="display: flex; align-items: center; text-decoration: none; color: var(--google-gray);"><i class="fas fa-envelope" style="margin-right: 8px;"></i>ayyappanallamothu4@gmail.com</a>
+                    <a href="tel:+919392567247" style="display: flex; align-items: center; text-decoration: none; color: var(--google-gray);"><i class="fas fa-phone" style="margin-right: 8px;"></i>+91 9392567247</a>
                 </div>
             </div>
         </div>
     </section>
-
     <footer>
         <div class="section-content">
             <p style="color: var(--google-gray);">&copy; <span id="year"></span> Ayyappa Venkata Surya. All rights reserved.</p>
             <div class="social-links">
-                <a href="https://linkedin.com/in/ayyappa-venkata-surya-nallamothu" target="_blank">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://github.com/ayyappavenkatasurya" target="_blank">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="mailto:ayyappanallamothu4@gmail.com">
-                    <i class="fas fa-envelope"></i>
-                </a>
+                <a href="https://linkedin.com/in/ayyappa-venkata-surya-nallamothu" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/ayyappavenkatasurya" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="mailto:ayyappanallamothu4@gmail.com"><i class="fas fa-envelope"></i></a>
             </div>
         </div>
     </footer>
 
     <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    
         // Update the year in the footer
         document.getElementById('year').textContent = new Date().getFullYear();
-    
-        // Note on form submission: 
-        // For the contact form to work, you need a backend service.
-        // I have added the 'action' and 'method' attributes for a service like Formspree.
-        // You would need to sign up for a service and replace "your_form_id" with your actual endpoint.
-        // The original alert() has been removed for this more professional setup.
     </script>
 </body>
 </html>
