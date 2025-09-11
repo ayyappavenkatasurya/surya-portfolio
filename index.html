@@ -14,6 +14,8 @@
             --google-yellow: #fbbc05;
             --google-green: #34a853;
             --google-gray: #5f6368;
+            --transition-speed: 0.3s;
+            --transition-timing: ease-in-out;
         }
 
         * {
@@ -22,7 +24,7 @@
             box-sizing: border-box;
             font-family: 'Roboto', sans-serif;
         }
-
+        
         html {
             scroll-behavior: smooth;
         }
@@ -31,11 +33,39 @@
             background: #fff;
             color: #202124;
             line-height: 1.6;
+            opacity: 0; /* Initially hidden for load animation */
+            animation: fadeInPage 1s ease-out forwards;
         }
 
         .google-font {
             font-family: 'Google Sans', sans-serif;
         }
+
+        /* --- Animation Styles --- */
+
+        @keyframes fadeInPage {
+            to {
+                opacity: 1;
+            }
+        }
+        
+        /* On-scroll reveal animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s var(--transition-timing), transform 0.8s var(--transition-timing);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Staggered animation delays */
+        .hero-content > *:nth-child(1) { transition-delay: 0.1s; }
+        .hero-content > *:nth-child(2) { transition-delay: 0.2s; }
+        .hero-content > *:nth-child(3) { transition-delay: 0.3s; }
+        .hero-content > *:nth-child(4) { transition-delay: 0.4s; }
 
         /* Navigation */
         nav {
@@ -60,6 +90,10 @@
             font-weight: 500;
             color: var(--google-gray);
             text-decoration: none;
+            transition: color var(--transition-speed) var(--transition-timing);
+        }
+        .nav-logo:hover {
+            color: var(--google-blue);
         }
 
         .nav-links {
@@ -74,11 +108,13 @@
             font-weight: 500;
             padding: 8px 16px;
             border-radius: 24px;
-            transition: background 0.2s;
+            transition: background var(--transition-speed), color var(--transition-speed), transform var(--transition-speed) var(--transition-timing);
         }
 
         .nav-links a:hover {
             background: #f1f3f4;
+            color: var(--google-blue);
+            transform: translateY(-2px);
         }
 
         /* Hero Section */
@@ -86,6 +122,7 @@
             padding: 120px 24px 80px;
             background: #f8f9fa;
             text-align: center;
+            overflow: hidden; /* Contains reveal animation */
         }
 
         .hero-content {
@@ -114,11 +151,12 @@
             font-weight: 500;
             display: inline-block;
             margin: 8px;
-            transition: box-shadow 0.2s;
+            transition: box-shadow var(--transition-speed), transform var(--transition-speed) var(--transition-timing);
         }
 
         .google-button:hover {
-            box-shadow: 0 2px 6px rgba(66,133,244,0.4);
+            box-shadow: 0 4px 12px rgba(66,133,244,0.4);
+            transform: scale(1.05);
         }
 
         /* Section Styles */
@@ -151,11 +189,12 @@
             border-radius: 8px;
             padding: 24px;
             box-shadow: 0 1px 3px rgba(0,0,0,0.12);
-            transition: box-shadow 0.2s;
+            transition: box-shadow var(--transition-speed), transform var(--transition-speed) var(--transition-timing);
         }
 
         .skill-card:hover {
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
         }
 
         .skill-card h3 {
@@ -176,29 +215,29 @@
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 1px 3px rgba(0,0,0,0.12);
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: transform var(--transition-speed) var(--transition-timing), box-shadow var(--transition-speed) var(--transition-timing);
             display: flex;
             flex-direction: column;
         }
 
         .project-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
         }
 
         .project-preview {
             width: 100%;
-            aspect-ratio: 16 / 10; /* Maintain a consistent shape */
+            aspect-ratio: 16 / 10;
             border: none;
             background: #f8f9fa;
-            pointer-events: none; /* Allows scrolling over the iframe */
+            pointer-events: none;
         }
 
         .project-content {
             padding: 20px;
             display: flex;
             flex-direction: column;
-            flex-grow: 1; /* Ensure content fills space */
+            flex-grow: 1;
         }
 
         .project-title {
@@ -224,34 +263,39 @@
             color: var(--google-gray);
             font-size: 22px;
             text-decoration: none;
-            transition: color 0.2s;
+            transition: color var(--transition-speed), transform var(--transition-speed) var(--transition-timing);
             margin-left: 16px;
         }
 
         .project-links a:hover {
             color: var(--google-blue);
+            transform: scale(1.15);
         }
 
 
-        /* Contact Form and other styles remain the same... */
+        /* Contact Form */
         .contact-form { max-width: 600px; margin: 0 auto; padding: 32px; background: white; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.12); }
         .form-group { margin-bottom: 24px; }
         .form-group label { display: block; margin-bottom: 8px; color: var(--google-gray); }
-        .form-group input, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #dadce0; border-radius: 4px; font-size: 16px; }
+        .form-group input, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #dadce0; border-radius: 4px; font-size: 16px; transition: border-color var(--transition-speed); }
         .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--google-blue); }
+        
+        /* Footer */
         footer { background: #f8f9fa; padding: 48px 24px; text-align: center; }
         .social-links { margin-top: 24px; }
-        .social-links a { color: var(--google-gray); margin: 0 12px; font-size: 20px; text-decoration: none; }
-        .social-links a:hover { color: var(--google-blue); }
+        .social-links a { color: var(--google-gray); margin: 0 12px; font-size: 20px; text-decoration: none; transition: color var(--transition-speed), transform var(--transition-speed) var(--transition-timing); display: inline-block; }
+        .social-links a:hover { color: var(--google-blue); transform: translateY(-3px) scale(1.1); }
+        
+        /* Responsive */
         @media (max-width: 768px) { .nav-links { display: none; } .hero h1 { font-size: 36px; } }
+        
         .profile-picture-container { margin-bottom: 24px; display: flex; justify-content: center; }
-        .profile-picture { width: 250px; height: 250px; border-radius: 50%; object-fit: cover; border: 0.2px solid white; box-shadow: 0 3px 9px rgba(0,0,0,0.1); transition: transform 0.3s ease; }
+        .profile-picture { width: 250px; height: 250px; border-radius: 50%; object-fit: cover; border: 0.2px solid white; box-shadow: 0 3px 9px rgba(0,0,0,0.1); transition: transform var(--transition-speed) ease; }
         .profile-picture:hover { transform: scale(1.05); }
 
     </style>
 </head>
 <body>
-    <!-- Navigation, Hero, About, Skills sections are unchanged -->
     <nav>
         <div class="nav-content">
             <a href="#" class="nav-logo google-font">A.V. Surya</a>
@@ -263,23 +307,25 @@
             </div>
         </div>
     </nav>
+
     <section class="hero">
         <div class="hero-content">
-            <div class="profile-picture-container">
-                <img src="surya.jpg" alt="Ayyappa Venkata Surya" class="profile-picture">
+            <div class="profile-picture-container reveal">
+                <img src="IMG_20250814_113355.jpg" alt="Ayyappa Venkata Surya" class="profile-picture">
             </div>
-            <h1 class="google-font">Nallamothu Ayyappa Venkata Surya</h1>
-            <p>AI & Data Science Student | Web Developer</p>
-            <div>
+            <h1 class="google-font reveal">Nallamothu Ayyappa Venkata Surya</h1>
+            <p class="reveal">AI & Data Science Student | Web Developer</p>
+            <div class="reveal">
                 <a href="mailto:ayyappanallamothu4@gmail.com" class="google-button" style="background: #000000;">Contact Me</a>
                 <a href="https://linkedin.com/in/ayyappa-venkata-surya-nallamothu" class="google-button" style="background: #275ae7;">LinkedIn</a>
             </div>
         </div>
     </section>
+
     <section id="about">
         <div class="section-content">
-            <h2 class="section-title google-font">About Me</h2>
-            <div class="skill-card">
+            <h2 class="section-title google-font reveal">About Me</h2>
+            <div class="skill-card reveal">
                 <p style="margin-bottom: 24px;">
                     A driven and enthusiastic individual pursuing B.Tech in Artificial Intelligence & Data Science at Seshadri Rao Gudlavalleru Engineering College. With a CGPA of 8.96/10, I am passionate about designing scalable web applications and leveraging AI to solve real-world problems.
                 </p>
@@ -312,18 +358,19 @@
             </div>
         </div>
     </section>
+
     <section id="skills" style="background: #f8f9fa;">
         <div class="section-content">
-            <h2 class="section-title google-font">Technical Skills</h2>
+            <h2 class="section-title google-font reveal">Technical Skills</h2>
             <div class="skills-grid">
-                <div class="skill-card">
+                <div class="skill-card reveal">
                     <h3 class="google-font">Programming Languages</h3>
                     <div style="display: flex; flex-direction: column; gap: 12px;">
                         <div style="display: flex; align-items: center;"><i class="fab fa-python" style="color: var(--google-blue); margin-right: 12px;"></i>Python</div>
                         <div style="display: flex; align-items: center;"><i class="fas fa-code" style="color: var(--google-blue); margin-right: 12px;"></i>C</div>
                     </div>
                 </div>
-                <div class="skill-card">
+                <div class="skill-card reveal" style="transition-delay: 0.2s;">
                     <h3 class="google-font">Web Technologies</h3>
                     <div style="display: flex; flex-direction: column; gap: 12px;">
                         <div style="display: flex; align-items: center;"><i class="fab fa-html5" style="color: var(--google-blue); margin-right: 12px;"></i>HTML</div>
@@ -333,7 +380,7 @@
                         <div style="display: flex; align-items: center;"><i class="fab fa-react" style="color: var(--google-blue); margin-right: 12px;"></i>ReactJS</div>
                     </div>
                 </div>
-                <div class="skill-card">
+                <div class="skill-card reveal" style="transition-delay: 0.4s;">
                     <h3 class="google-font">Databases</h3>
                     <div style="display: flex; flex-direction: column; gap: 12px;">
                         <div style="display: flex; align-items: center;"><i class="fas fa-database" style="color: var(--google-blue); margin-right: 12px;"></i>MongoDB</div>
@@ -347,10 +394,10 @@
 
     <section id="projects">
         <div class="section-content">
-            <h2 class="section-title google-font">Projects</h2>
+            <h2 class="section-title google-font reveal">Projects</h2>
             <div class="projects-grid">
                 
-                <div class="project-card">
+                <div class="project-card reveal">
                     <iframe class="project-preview" src="https://miniappecom.vercel.app/" title="Mini E-commerce Platform Preview" loading="lazy"></iframe>
                     <div class="project-content">
                         <h3 class="project-title google-font">Mini E-commerce Platform</h3>
@@ -364,7 +411,7 @@
                     </div>
                 </div>
                 
-                <div class="project-card">
+                <div class="project-card reveal">
                     <iframe class="project-preview" src="https://surya-gecchatbot.vercel.app/" title="GEC College AI Chatbot Preview" loading="lazy"></iframe>
                     <div class="project-content">
                         <h3 class="project-title google-font">GEC College AI Chatbot</h3>
@@ -378,7 +425,7 @@
                     </div>
                 </div>
                 
-                <div class="project-card">
+                <div class="project-card reveal">
                     <iframe class="project-preview" src="https://bujjiaisearch.vercel.app/" title="Bujji AI Search Engine Preview" loading="lazy"></iframe>
                     <div class="project-content">
                         <h3 class="project-title google-font">Bujji AI Search Engine</h3>
@@ -392,7 +439,7 @@
                     </div>
                 </div>
                 
-                <div class="project-card">
+                <div class="project-card reveal">
                     <iframe class="project-preview" src="https://chitti-zeta.vercel.app/" title="Chitti AI Assistant Preview" loading="lazy"></iframe>
                     <div class="project-content">
                         <h3 class="project-title google-font">Chitti AI Assistant</h3>
@@ -406,7 +453,7 @@
                     </div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card reveal">
                     <iframe class="project-preview" src="https://surya-virtual-piano.vercel.app/" title="Interactive Virtual Piano Preview" loading="lazy"></iframe>
                     <div class="project-content">
                         <h3 class="project-title google-font">Interactive Virtual Piano</h3>
@@ -420,7 +467,7 @@
                     </div>
                 </div>
                 
-                <div class="project-card">
+                <div class="project-card reveal">
                     <iframe class="project-preview" src="https://camel-radius.vercel.app/" title="Camel Radius Web Tools Preview" loading="lazy"></iframe>
                     <div class="project-content">
                         <h3 class="project-title google-font">Camel Radius - Web Tools</h3>
@@ -437,11 +484,10 @@
         </div>
     </section>
 
-    <!-- Contact and Footer sections are unchanged -->
     <section id="contact" style="background: #f8f9fa;">
         <div class="section-content">
-            <h2 class="section-title google-font">Get In Touch</h2>
-            <div class="contact-form">
+            <h2 class="section-title google-font reveal">Get In Touch</h2>
+            <div class="contact-form reveal">
                 <form action="https://formspree.io/f/your_form_id" method="POST">
                     <div class="form-group"><label for="name">Name</label><input type="text" id="name" name="name" required></div>
                     <div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email" required></div>
@@ -449,7 +495,7 @@
                     <button type="submit" class="google-button" style="width: 100%; border: transparent;">Send Message</button>
                 </form>
             </div>
-            <div style="text-align: center; margin-top: 48px;">
+            <div style="text-align: center; margin-top: 48px;" class="reveal">
                 <div style="margin-bottom: 24px;">
                     <p style="font-weight: 500; color: #202124;">Contact Information</p>
                     <p style="color: var(--google-gray);">Feel free to reach out through any of these channels</p>
@@ -461,8 +507,9 @@
             </div>
         </div>
     </section>
+
     <footer>
-        <div class="section-content">
+        <div class="section-content reveal">
             <p style="color: var(--google-gray);">&copy; <span id="year"></span> Ayyappa Venkata Surya. All rights reserved.</p>
             <div class="social-links">
                 <a href="https://linkedin.com/in/ayyappa-venkata-surya-nallamothu" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -475,6 +522,28 @@
     <script>
         // Update the year in the footer
         document.getElementById('year').textContent = new Date().getFullYear();
+
+        // --- Intersection Observer for Scroll Animations ---
+        const revealElements = document.querySelectorAll('.reveal');
+
+        const observerOptions = {
+            root: null, // uses the viewport
+            rootMargin: '0px',
+            threshold: 0.1 // trigger when 10% of the element is visible
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // Animate only once
+                }
+            });
+        }, observerOptions);
+
+        revealElements.forEach(el => {
+            observer.observe(el);
+        });
     </script>
 </body>
 </html>
