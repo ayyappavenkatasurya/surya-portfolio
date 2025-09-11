@@ -167,19 +167,25 @@
         }
 
         .project-card {
-            background: rgb(242, 248, 255);
+            background: rgb(248, 250, 255);
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 1px 3px rgba(0,0,0,0.12);
-            transition: transform 0.2s;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex; /* For footer alignment */
+            flex-direction: column; /* For footer alignment */
         }
 
         .project-card:hover {
             transform: translateY(-4px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
         .project-content {
             padding: 24px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         .project-title {
@@ -190,15 +196,46 @@
         .project-description {
             color: var(--google-gray);
             margin-bottom: 16px;
+            flex-grow: 1; /* Pushes footer to the bottom */
+        }
+        
+        .project-footer {
+            margin-top: auto; /* Aligns footer to the bottom */
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
         }
 
         .tag {
-            background: #ffffff;
-            color: var(--google-gray);
+            background: #e8f0fe;
+            color: #1967d2;
             padding: 4px 12px;
             border-radius: 16px;
             font-size: 12px;
-            margin-right: 8px;
+            font-weight: 500;
+        }
+
+        .project-external-links {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .project-external-links a {
+            color: var(--google-gray);
+            font-size: 20px;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .project-external-links a:hover {
+            color: var(--google-blue);
         }
 
         /* Contact Form */
@@ -307,7 +344,7 @@
     <section class="hero">
         <div class="hero-content">
             <div class="profile-picture-container">
-                <img src="IMG_20250814_113355.jpg" alt="Ayyappa Venkata Surya" class="profile-picture">
+                <img src="surya.jpg" alt="Ayyappa Venkata Surya" class="profile-picture">
             </div>
             <h1 class="google-font">Nallamothu Ayyappa Venkata Surya</h1>
             <p>AI & Data Science Student | Web Developer</p>
@@ -422,110 +459,198 @@
         <div class="section-content">
             <h2 class="section-title google-font">Projects</h2>
             <div class="projects-grid">
-               <a href="https://scrap2predict.vercel.app/" style="text-decoration: none;"> <div class="project-card">
+                
+                <div class="project-card">
                     <div class="project-content">
-                        <h3 class="project-title google-font">Medical AI Chatbot</h3>
-                        <p class="project-description">
-                            A web-based AI chatbot designed to assist in diagnosing medical conditions. The application leverages artificial intelligence to provide preliminary medical guidance.
-                        </p>
-                        <div>
-                            <span class="tag">AI</span>
-                            <span class="tag">Web Development</span>
-
+                        <h3 class="project-title google-font">Mini E-commerce Platform</h3>
+                        <p class="project-description">A compact and functional e-commerce application demonstrating product display, cart management, and user interaction.</p>
+                        <div class="project-footer">
+                            <div class="tags-container">
+                                <span class="tag">E-commerce</span><span class="tag">React</span>
+                            </div>
+                            <div class="project-external-links">
+                                <a href="https://miniappecom.vercel.app/" target="_blank" rel="noopener noreferrer" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="https://github.com/ayyappavenkatasurya/surya-ecommerce" target="_blank" rel="noopener noreferrer" title="View Code"><i class="fab fa-github"></i></a>
+                            </div>
                         </div>
                     </div>
-                </div> </a>
-               <a href="https://www.camelpad.me/" style="text-decoration: transparent;"><div class="project-card"> 
+                </div>
+                
+                <div class="project-card">
                     <div class="project-content">
-                        <h3 class="project-title google-font">Notebook Web Application</h3>
-                        <p class="project-description">
-                            A cloud-based note-taking applicationwith secure storage. Users can create, edit, and manage their notes with a focus on data security and user privacy.
-                    </p>
-                    <div>
-                        <span class="tag">Web Development</span>
-                        <span class="tag">Cloud Storage</span>
+                        <h3 class="project-title google-font">GEC College AI Chatbot</h3>
+                        <p class="project-description">An intelligent chatbot designed for Gudlavalleru Engineering College to answer student queries and provide information using AI.</p>
+                        <div class="project-footer">
+                            <div class="tags-container">
+                                <span class="tag">AI</span><span class="tag">Chatbot</span><span class="tag">NLP</span>
+                            </div>
+                            <div class="project-external-links">
+                                <a href="https://surya-gecchatbot.vercel.app/" target="_blank" rel="noopener noreferrer" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="https://github.com/ayyappavenkatasurya/surya-gecchatbot" target="_blank" rel="noopener noreferrer" title="View Code"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
                     </div>
-                </div></a>
-            </div>
-        </div>
-    </div>
-</section>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title google-font">Bujji AI Search Engine</h3>
+                        <p class="project-description">An AI-enhanced search engine prototype that provides intelligent and context-aware search results, improving relevance.</p>
+                        <div class="project-footer">
+                            <div class="tags-container">
+                                <span class="tag">AI</span><span class="tag">Search</span><span class="tag">Web App</span>
+                            </div>
+                            <div class="project-external-links">
+                                <a href="https://bujjiaisearch.vercel.app/" target="_blank" rel="noopener noreferrer" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="https://github.com/nallamothusurya/surya-bujji-ai-search" target="_blank" rel="noopener noreferrer" title="View Code"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title google-font">Chitti AI Assistant</h3>
+                        <p class="project-description">An interactive AI assistant/chatbot, inspired by popular sci-fi concepts, built to engage with users in a conversational manner.</p>
+                        <div class="project-footer">
+                            <div class="tags-container">
+                                <span class="tag">AI</span><span class="tag">Chatbot</span><span class="tag">JS</span>
+                            </div>
+                            <div class="project-external-links">
+                                <a href="https://chitti-zeta.vercel.app/" target="_blank" rel="noopener noreferrer" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="https://github.com/nallamothusurya/surya-bujji-robot" target="_blank" rel="noopener noreferrer" title="View Code"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-<section id="contact" style="background: #f8f9fa;">
-    <div class="section-content">
-        <h2 class="section-title google-font">Get In Touch</h2>
-        <div class="contact-form">
-            <form>
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" required>
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title google-font">Interactive Virtual Piano</h3>
+                        <p class="project-description">A responsive virtual piano allowing users to play music directly in their browser with their keyboard or mouse.</p>
+                        <div class="project-footer">
+                            <div class="tags-container">
+                                <span class="tag">JavaScript</span><span class="tag">Frontend</span>
+                            </div>
+                            <div class="project-external-links">
+                                <a href="https://surya-virtual-piano.vercel.app/" target="_blank" rel="noopener noreferrer" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="https://github.com/nallamothusurya/surya-virtual-piano" target="_blank" rel="noopener noreferrer" title="View Code"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" required>
+                
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title google-font">Camel Radius - Web Tools</h3>
+                        <p class="project-description">A collection of handy web-based utility tools for various tasks, designed for simplicity and efficiency.</p>
+                        <div class="project-footer">
+                            <div class="tags-container">
+                                <span class="tag">Web App</span><span class="tag">Utility</span><span class="tag">Tools</span>
+                            </div>
+                            <div class="project-external-links">
+                                <a href="https://camel-radius.vercel.app/" target="_blank" rel="noopener noreferrer" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="https://github.com/nallamothusurya/surya-camel-tools" target="_blank" rel="noopener noreferrer" title="View Code"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" rows="4" required></textarea>
+                
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title google-font">Smart Bridge Concept</h3>
+                        <p class="project-description">A conceptual web application demonstrating the principles of a smart bridge, potentially for monitoring or simulation.</p>
+                        <div class="project-footer">
+                            <div class="tags-container">
+                                <span class="tag">Simulation</span><span class="tag">Concept</span>
+                            </div>
+                            <div class="project-external-links">
+                                <a href="https://surya-smartbridge.vercel.app/" target="_blank" rel="noopener noreferrer" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="https://github.com/nallamothusurya/surya-smartbridge" target="_blank" rel="noopener noreferrer" title="View Code"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <button type="submit" class="google-button" style="width: 100%; border: transparent;">Send Message</button>
-            </form>
-        </div>
-        <div style="text-align: center; margin-top: 48px;">
-            <div style="margin-bottom: 24px;">
-                <p style="font-weight: 500; color: #202124;">Contact Information</p>
-                <p style="color: var(--google-gray);">Feel free to reach out through any of these channels</p>
+
             </div>
-            <div style="display: flex; justify-content: center; gap: 32px; flex-wrap: wrap;">
-                <a href="mailto:ayyappanallamothu4@gmail.com" style="display: flex; align-items: center; text-decoration: none; color: var(--google-gray);">
-                    <i class="fas fa-envelope" style="margin-right: 8px;"></i>
-                    ayyappanallamothu4@gmail.com
+        </div>
+    </section>
+
+    <section id="contact" style="background: #f8f9fa;">
+        <div class="section-content">
+            <h2 class="section-title google-font">Get In Touch</h2>
+            <div class="contact-form">
+                <form action="https://formspree.io/f/your_form_id" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="google-button" style="width: 100%; border: transparent;">Send Message</button>
+                </form>
+            </div>
+            <div style="text-align: center; margin-top: 48px;">
+                <div style="margin-bottom: 24px;">
+                    <p style="font-weight: 500; color: #202124;">Contact Information</p>
+                    <p style="color: var(--google-gray);">Feel free to reach out through any of these channels</p>
+                </div>
+                <div style="display: flex; justify-content: center; gap: 32px; flex-wrap: wrap;">
+                    <a href="mailto:ayyappanallamothu4@gmail.com" style="display: flex; align-items: center; text-decoration: none; color: var(--google-gray);">
+                        <i class="fas fa-envelope" style="margin-right: 8px;"></i>
+                        ayyappanallamothu4@gmail.com
+                    </a>
+                    <a href="tel:+919392567247" style="display: flex; align-items: center; text-decoration: none; color: var(--google-gray);">
+                        <i class="fas fa-phone" style="margin-right: 8px;"></i>
+                        +91 9392567247
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="section-content">
+            <p style="color: var(--google-gray);">&copy; <span id="year"></span> Ayyappa Venkata Surya. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://linkedin.com/in/ayyappa-venkata-surya-nallamothu" target="_blank">
+                    <i class="fab fa-linkedin"></i>
                 </a>
-                <a href="tel:+919392567247" style="display: flex; align-items: center; text-decoration: none; color: var(--google-gray);">
-                    <i class="fas fa-phone" style="margin-right: 8px;"></i>
-                    +91 9392567247
+                <a href="https://github.com/ayyappavenkatasurya" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:ayyappanallamothu4@gmail.com">
+                    <i class="fas fa-envelope"></i>
                 </a>
             </div>
         </div>
-    </div>
-</section>
+    </footer>
 
-<footer>
-    <div class="section-content">
-        <p style="color: var(--google-gray);">&copy; <span id="year"></span> Ayyappa Venkata Surya. All rights reserved.</p>
-        <div class="social-links">
-            <a href="https://linkedin.com/in/ayyappa-venkata-surya-nallamothu" target="_blank">
-                <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="https://github.com/ayyappavenkatasurya" target="_blank">
-                <i class="fab fa-github"></i>
-            </a>
-            <a href="mailto:ayyappanallamothu4@gmail.com">
-                <i class="fas fa-envelope"></i>
-            </a>
-        </div>
-    </div>
-</footer>
-
-<script>
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
             });
         });
-    });
-
-    // Form submission handling
-    document.querySelector('form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        // Add your form submission logic here
-        alert('Thank you for your message! I will get back to you soon.');
-    });
-
-    document.getElementById('year').textContent = new Date().getFullYear();
-</script>
+    
+        // Update the year in the footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+    
+        // Note on form submission: 
+        // For the contact form to work, you need a backend service.
+        // I have added the 'action' and 'method' attributes for a service like Formspree.
+        // You would need to sign up for a service and replace "your_form_id" with your actual endpoint.
+        // The original alert() has been removed for this more professional setup.
+    </script>
 </body>
 </html>
