@@ -20,95 +20,38 @@
             --skeleton-shimmer: #f5f5f5;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Roboto', sans-serif;
-        }
-        
-        html {
-            scroll-behavior: smooth;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif; }
+        html { scroll-behavior: smooth; }
+        body { background: #fff; color: #202124; line-height: 1.6; }
+        .google-font { font-family: 'Google Sans', sans-serif; }
 
-        body {
-            background: #fff;
-            color: #202124;
-            line-height: 1.6;
-        }
-
-        .google-font {
-            font-family: 'Google Sans', sans-serif;
-        }
-
-        /* --- SKELETON LOADER STYLES --- */
-        #skeleton-loader {
-            transition: opacity 0.5s ease-out;
-        }
-        #skeleton-loader.fade-out {
-            opacity: 0;
-        }
-
-        .skeleton {
-            background-color: var(--skeleton-bg);
-            position: relative;
-            overflow: hidden;
-        }
-        .skeleton::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, var(--skeleton-bg), var(--skeleton-shimmer), var(--skeleton-bg));
-            animation: shimmer 1.5s infinite linear;
-        }
-        @keyframes shimmer {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
-        }
-
+        /* SKELETON LOADER STYLES */
+        #skeleton-loader { transition: opacity 0.5s ease-out; }
+        #skeleton-loader.fade-out { opacity: 0; }
+        .skeleton { background-color: var(--skeleton-bg); position: relative; overflow: hidden; }
+        .skeleton::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(90deg, var(--skeleton-bg), var(--skeleton-shimmer), var(--skeleton-bg)); animation: shimmer 1.5s infinite linear; }
+        @keyframes shimmer { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
         .skeleton-avatar { border-radius: 50%; width: 250px; height: 250px; margin: 0 auto 24px; }
         .skeleton-text { height: 1em; border-radius: 4px; margin-bottom: 0.75em; }
         .skeleton-button { width: 120px; height: 48px; border-radius: 24px; }
         .skeleton-card { background: #f0f0f0; border-radius: 8px; padding: 24px; }
         .skeleton-preview { width: 100%; aspect-ratio: 16 / 10; border-radius: 8px 8px 0 0; }
-        .w-80 { width: 80%; }
-        .w-60 { width: 60%; }
-        .w-40 { width: 40%; }
-        .d-flex { display: flex; }
-        .gap-1 { gap: 8px; }
-        .gap-2 { gap: 16px; }
-        .justify-center { justify-content: center; }
-        .align-center { align-items: center; }
-        .mt-2 { margin-top: 16px; }
+        .w-80 { width: 80%; } .w-60 { width: 60%; } .w-40 { width: 40%; }
+        .d-flex { display: flex; } .gap-2 { gap: 16px; }
+        .justify-center { justify-content: center; } .mt-2 { margin-top: 16px; }
 
-        /* --- Main Content Hiding/Showing --- */
-        #main-content {
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.5s ease-in;
-        }
-        #main-content.visible {
-            opacity: 1;
-            visibility: visible;
-        }
+        /* Main Content Hiding/Showing */
+        #main-content { opacity: 0; visibility: hidden; transition: opacity 0.5s ease-in; }
+        #main-content.visible { opacity: 1; visibility: visible; }
         
-
-        /* --- Animation Styles --- */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s var(--transition-timing), transform 0.8s var(--transition-timing);
-        }
+        /* Animation Styles */
+        .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s var(--transition-timing), transform 0.8s var(--transition-timing); }
         .reveal.visible { opacity: 1; transform: translateY(0); }
         .hero-content > *:nth-child(1) { transition-delay: 0.1s; }
         .hero-content > *:nth-child(2) { transition-delay: 0.2s; }
         .hero-content > *:nth-child(3) { transition-delay: 0.3s; }
         .hero-content > *:nth-child(4) { transition-delay: 0.4s; }
 
-        /* --- All other existing styles --- */
         /* Navigation */
         nav { background: #fff; box-shadow: 0 2px 6px rgba(0,0,0,0.1); position: fixed; width: 100%; z-index: 1000; padding: 8px 24px; }
         .nav-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
@@ -161,9 +104,8 @@
 </head>
 <body>
 
-    <!-- SKELETON LOADER HTML -->
     <div id="skeleton-loader">
-        <div class="hero" style="padding-top: 184px; padding-bottom: 144px;"> <!-- Adjusted padding for nav -->
+        <div class="hero" style="padding-top: 184px; padding-bottom: 144px;">
              <div class="skeleton skeleton-avatar"></div>
              <div class="skeleton skeleton-text w-60" style="margin: 0 auto 16px;"></div>
              <div class="skeleton skeleton-text w-40" style="margin: 0 auto 32px;"></div>
@@ -176,54 +118,26 @@
             <div class="section-content">
                 <div class="skeleton skeleton-text w-40" style="height: 2em; margin: 0 auto 48px;"></div>
                 <div class="projects-grid">
-                    <!-- Repeat this block 6 times for a full grid -->
-                    <div class="skeleton-card" style="padding: 0; background: transparent;">
-                        <div class="skeleton skeleton-preview"></div>
-                        <div style="padding: 20px;">
-                            <div class="skeleton skeleton-text w-80"></div>
-                            <div class="skeleton skeleton-text w-60"></div>
-                            <div class="skeleton skeleton-text w-80 mt-2"></div>
-                        </div>
-                    </div>
-                    <div class="skeleton-card" style="padding: 0; background: transparent;">
-                        <div class="skeleton skeleton-preview"></div>
-                        <div style="padding: 20px;">
-                            <div class="skeleton skeleton-text w-80"></div>
-                            <div class="skeleton skeleton-text w-60"></div>
-                            <div class="skeleton skeleton-text w-80 mt-2"></div>
-                        </div>
-                    </div>
-                    <div class="skeleton-card" style="padding: 0; background: transparent;">
-                        <div class="skeleton skeleton-preview"></div>
-                        <div style="padding: 20px;">
-                            <div class="skeleton skeleton-text w-80"></div>
-                            <div class="skeleton skeleton-text w-60"></div>
-                            <div class="skeleton skeleton-text w-80 mt-2"></div>
-                        </div>
-                    </div>
+                    <div class="skeleton-card" style="padding: 0; background: transparent;"><div class="skeleton skeleton-preview"></div><div style="padding: 20px;"><div class="skeleton skeleton-text w-80"></div><div class="skeleton skeleton-text w-60"></div><div class="skeleton skeleton-text w-80 mt-2"></div></div></div>
+                    <div class="skeleton-card" style="padding: 0; background: transparent;"><div class="skeleton skeleton-preview"></div><div style="padding: 20px;"><div class="skeleton skeleton-text w-80"></div><div class="skeleton skeleton-text w-60"></div><div class="skeleton skeleton-text w-80 mt-2"></div></div></div>
+                    <div class="skeleton-card" style="padding: 0; background: transparent;"><div class="skeleton skeleton-preview"></div><div style="padding: 20px;"><div class="skeleton skeleton-text w-80"></div><div class="skeleton skeleton-text w-60"></div><div class="skeleton skeleton-text w-80 mt-2"></div></div></div>
                 </div>
             </div>
         </section>
     </div>
 
-    <!-- MAIN CONTENT - Initially hidden -->
     <div id="main-content">
         <nav>
             <div class="nav-content">
                 <a href="#" class="nav-logo google-font">A.V. Surya</a>
                 <div class="nav-links google-font">
-                    <a href="#about">About</a>
-                    <a href="#skills">Skills</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#contact">Contact</a>
+                    <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
                 </div>
             </div>
         </nav>
         <section class="hero">
             <div class="hero-content">
-                <div class="profile-picture-container reveal">
-                    <img src="surya.jpg" alt="Ayyappa Venkata Surya" class="profile-picture">
-                </div>
+                <div class="profile-picture-container reveal"><img src="surya.jpg" alt="Ayyappa Venkata Surya" class="profile-picture"></div>
                 <h1 class="google-font reveal">Nallamothu Ayyappa Venkata Surya</h1>
                 <p class="reveal">AI & Data Science Student | Web Developer</p>
                 <div class="reveal">
@@ -236,22 +150,12 @@
             <div class="section-content">
                 <h2 class="section-title google-font reveal">About Me</h2>
                 <div class="skill-card reveal">
-                    <p style="margin-bottom: 24px;">
-                        A driven and enthusiastic individual pursuing B.Tech in Artificial Intelligence & Data Science at Seshadri Rao Gudlavalleru Engineering College. With a CGPA of 8.96/10, I am passionate about designing scalable web applications and leveraging AI to solve real-world problems.
-                    </p>
+                    <p style="margin-bottom: 24px;">A driven and enthusiastic individual pursuing B.Tech in Artificial Intelligence & Data Science at Seshadri Rao Gudlavalleru Engineering College. With a CGPA of 8.96/10, I am passionate about designing scalable web applications and leveraging AI to solve real-world problems.</p>
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
                         <div>
                             <h3 class="google-font">Education</h3>
-                            <div style="margin-bottom: 16px;">
-                                <p style="font-weight: 500;">B.Tech in AI & Data Science</p>
-                                <p>Seshadri Rao Gudlavalleru Engineering College</p>
-                                <p style="color: var(--google-gray);">2022 - 2025 | CGPA: 9.07/10</p>
-                            </div>
-                            <div>
-                                <p style="font-weight: 500;">Intermediate, MPC</p>
-                                <p>Sri Chaitanya Junior College</p>
-                                <p style="color: var(--google-gray);">2020 - 2022 | Percentage: 92.5%</p>
-                            </div>
+                            <div style="margin-bottom: 16px;"><p style="font-weight: 500;">B.Tech in AI & Data Science</p><p>Seshadri Rao Gudlavalleru Engineering College</p><p style="color: var(--google-gray);">2022 - 2025 | CGPA: 9.07/10</p></div>
+                            <div><p style="font-weight: 500;">Intermediate, MPC</p><p>Sri Chaitanya Junior College</p><p style="color: var(--google-gray);">2020 - 2022 | Percentage: 92.5%</p></div>
                         </div>
                         <div>
                             <h3 class="google-font">Languages</h3>
@@ -276,19 +180,35 @@
                     <div class="skill-card reveal" style="transition-delay: 0.2s;">
                         <h3 class="google-font">Web Technologies</h3>
                         <div style="display: flex; flex-direction: column; gap: 12px;">
-                            <div style="display: flex; align-items: center;"><i class="fab fa-html5" style="color: var(--google-blue); margin-right: 12px;"></i>HTML</div>
-                            <div style="display: flex; align-items: center;"><i class="fab fa-css3-alt" style="color: var(--google-blue); margin-right: 12px;"></i>CSS</div>
-                            <div style="display: flex; align-items: center;"><i class="fab fa-js" style="color: var(--google-blue); margin-right: 12px;"></i>JavaScript</div>
-                            <div style="display: flex; align-items: center;"><i class="fab fa-node" style="color: var(--google-blue); margin-right: 12px;"></i>NodeJS</div>
-                            <div style="display: flex; align-items: center;"><i class="fab fa-react" style="color: var(--google-blue); margin-right: 12px;"></i>ReactJS</div>
+                            <div style="display: flex; align-items: center;"><i class="fab fa-html5" style="color: var(--google-red); margin-right: 12px;"></i>HTML</div>
+                            <div style="display: flex; align-items: center;"><i class="fab fa-css3-alt" style="color: var(--google-red); margin-right: 12px;"></i>CSS</div>
+                            <div style="display: flex; align-items: center;"><i class="fab fa-js" style="color: var(--google-red); margin-right: 12px;"></i>JavaScript</div>
+                            <div style="display: flex; align-items: center;"><i class="fab fa-node" style="color: var(--google-red); margin-right: 12px;"></i>NodeJS</div>
+                            <div style="display: flex; align-items: center;"><i class="fab fa-react" style="color: var(--google-red); margin-right: 12px;"></i>ReactJS</div>
                         </div>
                     </div>
                     <div class="skill-card reveal" style="transition-delay: 0.4s;">
+                        <h3 class="google-font">AI & Machine Learning</h3>
+                        <div style="display: flex; flex-direction: column; gap: 12px;">
+                            <div style="display: flex; align-items: center;"><i class="fas fa-brain" style="color: var(--google-green); margin-right: 12px;"></i>Machine Learning Models</div>
+                            <div style="display: flex; align-items: center;"><i class="fas fa-robot" style="color: var(--google-green); margin-right: 12px;"></i>Deep Learning (TensorFlow)</div>
+                            <div style="display: flex; align-items: center;"><i class="fas fa-comment-dots" style="color: var(--google-green); margin-right: 12px;"></i>Natural Language Processing</div>
+                        </div>
+                    </div>
+                     <div class="skill-card reveal" style="transition-delay: 0.6s;">
                         <h3 class="google-font">Databases</h3>
                         <div style="display: flex; flex-direction: column; gap: 12px;">
                             <div style="display: flex; align-items: center;"><i class="fas fa-database" style="color: var(--google-blue); margin-right: 12px;"></i>MongoDB</div>
                             <div style="display: flex; align-items: center;"><i class="fas fa-database" style="color: var(--google-blue); margin-right: 12px;"></i>MySQL</div>
                             <div style="display: flex; align-items: center;"><i class="fas fa-database" style="color: var(--google-blue); margin-right: 12px;"></i>Oracle</div>
+                        </div>
+                    </div>
+                    <div class="skill-card reveal">
+                        <h3 class="google-font">Cloud & Tools</h3>
+                        <div style="display: flex; flex-direction: column; gap: 12px;">
+                            <div style="display: flex; align-items: center;"><i class="fas fa-cloud" style="color: var(--google-yellow); margin-right: 12px;"></i>Cloud (AWS, GCP)</div>
+                            <div style="display: flex; align-items: center;"><i class="fas fa-server" style="color: var(--google-yellow); margin-right: 12px;"></i>Vercel Deployment</div>
+                            <div style="display: flex; align-items: center;"><i class="fab fa-git-alt" style="color: var(--google-yellow); margin-right: 12px;"></i>Git & GitHub</div>
                         </div>
                     </div>
                 </div>
@@ -310,23 +230,10 @@
         <section id="contact" style="background: #f8f9fa;">
             <div class="section-content">
                 <h2 class="section-title google-font reveal">Get In Touch</h2>
-                <div class="contact-form reveal">
-                    <form action="https://formspree.io/f/your_form_id" method="POST">
-                        <div class="form-group"><label for="name">Name</label><input type="text" id="name" name="name" required></div>
-                        <div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email" required></div>
-                        <div class="form-group"><label for="message">Message</label><textarea id="message" name="message" rows="4" required></textarea></div>
-                        <button type="submit" class="google-button" style="width: 100%; border: transparent;">Send Message</button>
-                    </form>
-                </div>
+                <div class="contact-form reveal"><form action="https://formspree.io/f/your_form_id" method="POST"><div class="form-group"><label for="name">Name</label><input type="text" id="name" name="name" required></div><div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email" required></div><div class="form-group"><label for="message">Message</label><textarea id="message" name="message" rows="4" required></textarea></div><button type="submit" class="google-button" style="width: 100%; border: transparent;">Send Message</button></form></div>
                 <div style="text-align: center; margin-top: 48px;" class="reveal">
-                    <div style="margin-bottom: 24px;">
-                        <p style="font-weight: 500; color: #202124;">Contact Information</p>
-                        <p style="color: var(--google-gray);">Feel free to reach out through any of these channels</p>
-                    </div>
-                    <div style="display: flex; justify-content: center; gap: 32px; flex-wrap: wrap;">
-                        <a href="mailto:ayyappanallamothu4@gmail.com" style="display: flex; align-items: center; text-decoration: none; color: var(--google-gray);"><i class="fas fa-envelope" style="margin-right: 8px;"></i>ayyappanallamothu4@gmail.com</a>
-                        <a href="tel:+919392567247" style="display: flex; align-items: center; text-decoration: none; color: var(--google-gray);"><i class="fas fa-phone" style="margin-right: 8px;"></i>+91 9392567247</a>
-                    </div>
+                    <div style="margin-bottom: 24px;"><p style="font-weight: 500; color: #202124;">Contact Information</p><p style="color: var(--google-gray);">Feel free to reach out through any of these channels</p></div>
+                    <div style="display: flex; justify-content: center; gap: 32px; flex-wrap: wrap;"><a href="mailto:ayyappanallamothu4@gmail.com" style="display: flex; align-items: center; text-decoration: none; color: var(--google-gray);"><i class="fas fa-envelope" style="margin-right: 8px;"></i>ayyappanallamothu4@gmail.com</a><a href="tel:+919392567247" style="display: flex; align-items: center; text-decoration: none; color: var(--google-gray);"><i class="fas fa-phone" style="margin-right: 8px;"></i>+91 9392567247</a></div>
                 </div>
             </div>
         </section>
@@ -343,29 +250,16 @@
     </div>
 
     <script>
-        // --- CONTENT LOADER SCRIPT ---
         document.addEventListener('DOMContentLoaded', () => {
             const skeletonLoader = document.getElementById('skeleton-loader');
             const mainContent = document.getElementById('main-content');
-
-            // Simulate loading time
             setTimeout(() => {
                 skeletonLoader.classList.add('fade-out');
                 mainContent.classList.add('visible');
-
-                // After fade out transition, remove skeleton from DOM
                 setTimeout(() => {
                     skeletonLoader.style.display = 'none';
-
-                    // --- Intersection Observer for Scroll Animations ---
-                    // Initialize this AFTER the content is visible
                     const revealElements = document.querySelectorAll('.reveal');
-                    const observerOptions = {
-                        root: null,
-                        rootMargin: '0px',
-                        threshold: 0.1
-                    };
-
+                    const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
                     const observer = new IntersectionObserver((entries, observer) => {
                         entries.forEach(entry => {
                             if (entry.isIntersecting) {
@@ -374,17 +268,10 @@
                             }
                         });
                     }, observerOptions);
-
-                    revealElements.forEach(el => {
-                        observer.observe(el);
-                    });
-
-                }, 500); // Must match the fade-out duration in CSS
-
-            }, 1500); // 1.5 second simulated loading time
+                    revealElements.forEach(el => { observer.observe(el); });
+                }, 500);
+            }, 1500);
         });
-        
-        // Update the year in the footer
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
 </body>
