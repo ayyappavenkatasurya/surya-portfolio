@@ -3,11 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ayyappa Venkata Surya - Portfolio</title>
+
+    <!-- SEO Change: Optimized Title for "Surya Nallamothu" -->
+    <title>Surya Nallamothu | AI & Data Science Student Portfolio</title>
+
+    <!-- SEO Addition: Meta Description for search results -->
+    <meta name="description" content="Welcome to the portfolio of Surya Nallamothu, a passionate AI & Data Science student and web developer. Explore my projects in machine learning, ReactJS, and more.">
+
+    <!-- SEO Addition: Canonical URL to prevent duplicate content issues -->
+    <link rel="canonical" href="https://suryanallamothu.vercel.app/" />
+    
+    <!-- SEO Addition: Google Site Verification Tag -->
+    <!-- IMPORTANT: Go to Google Search Console, get your HTML verification tag, and paste it here replacing this line. -->
+    <meta name="google-site-verification" content="YOUR_UNIQUE_CODE_HERE" />
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
-        /* Google-inspired styles */
+        /* Your CSS styles remain unchanged... */
         :root {
             --google-blue: #4285f4;
             --google-red: #ea4335;
@@ -101,10 +114,37 @@
         .profile-picture { width: 250px; height: 250px; border-radius: 50%; object-fit: cover; border: 0.2px solid white; box-shadow: 0 3px 9px rgba(0,0,0,0.1); transition: transform var(--transition-speed) ease; }
         .profile-picture:hover { transform: scale(1.05); }
     </style>
+
+    <!-- SEO Addition: JSON-LD Schema Markup for "Person" -->
+    <!-- This code explicitly tells Google who you are, what you do, and what your social profiles are. -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Surya Nallamothu",
+      "alternateName": "Nallamothu Ayyappa Venkata Surya",
+      "url": "https://suryanallamothu.vercel.app/",
+      "image": "https://suryanallamothu.vercel.app/surya.jpg",
+      "sameAs": [
+        "https://linkedin.com/in/ayyappa-venkata-surya-nallamothu",
+        "https://github.com/ayyappavenkatasurya"
+      ],
+      "jobTitle": "AI & Data Science Student",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Seshadri Rao Gudlavalleru Engineering College"
+      },
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Seshadri Rao Gudlavalleru Engineering College"
+      }
+    }
+    </script>
 </head>
 <body>
 
     <div id="skeleton-loader">
+        <!-- Skeleton loader HTML remains unchanged... -->
         <div class="hero" style="padding-top: 184px; padding-bottom: 144px;">
              <div class="skeleton skeleton-avatar"></div>
              <div class="skeleton skeleton-text w-60" style="margin: 0 auto 16px;"></div>
@@ -129,7 +169,7 @@
     <div id="main-content">
         <nav>
             <div class="nav-content">
-                <a href="#" class="nav-logo google-font">A.V. Surya</a>
+                <a href="#" class="nav-logo google-font">Surya Nallamothu</a>
                 <div class="nav-links google-font">
                     <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
                 </div>
@@ -137,8 +177,12 @@
         </nav>
         <section class="hero">
             <div class="hero-content">
-                <div class="profile-picture-container reveal"><img src="surya.jpg" alt="Ayyappa Venkata Surya" class="profile-picture"></div>
-                <h1 class="google-font reveal">Nallamothu Ayyappa Venkata Surya</h1>
+                <div class="profile-picture-container reveal">
+                    <!-- SEO Change: Improved Image Alt Text -->
+                    <img src="surya.jpg" alt="Photo of Surya Nallamothu, AI and Data Science Student" class="profile-picture">
+                </div>
+                <!-- SEO Change: Prioritized "Surya Nallamothu" in H1 heading -->
+                <h1 class="google-font reveal">Surya Nallamothu</h1>
                 <p class="reveal">AI & Data Science Student | Web Developer</p>
                 <div class="reveal">
                     <a href="mailto:ayyappanallamothu4@gmail.com" class="google-button" style="background: #000000;">Contact Me</a>
@@ -147,10 +191,11 @@
             </div>
         </section>
         <section id="about">
+            <!-- Rest of your body content remains the same... -->
             <div class="section-content">
                 <h2 class="section-title google-font reveal">About Me</h2>
                 <div class="skill-card reveal">
-                    <p style="margin-bottom: 24px;">A driven and enthusiastic individual pursuing B.Tech in Artificial Intelligence & Data Science at Seshadri Rao Gudlavalleru Engineering College. With a CGPA of 8.96/10, I am passionate about designing scalable web applications and leveraging AI to solve real-world problems.</p>
+                    <p style="margin-bottom: 24px;">A driven and enthusiastic individual pursuing B.Tech in Artificial Intelligence & Data Science at Seshadri Rao Gudlavalleru Engineering College. My full name is Nallamothu Ayyappa Venkata Surya, and I am passionate about designing scalable web applications and leveraging AI to solve real-world problems.</p>
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
                         <div>
                             <h3 class="google-font">Education</h3>
@@ -239,7 +284,7 @@
         </section>
         <footer>
             <div class="section-content reveal">
-                <p style="color: var(--google-gray);">&copy; <span id="year"></span> Ayyappa Venkata Surya. All rights reserved.</p>
+                <p style="color: var(--google-gray);">&copy; <span id="year"></span> Surya Nallamothu. All rights reserved.</p>
                 <div class="social-links">
                     <a href="https://linkedin.com/in/ayyappa-venkata-surya-nallamothu" target="_blank"><i class="fab fa-linkedin"></i></a>
                     <a href="https://github.com/ayyappavenkatasurya" target="_blank"><i class="fab fa-github"></i></a>
