@@ -4,126 +4,457 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- SEO Change: Optimized Title for "Surya Nallamothu" -->
-    <title>Surya Nallamothu | AI & Data Science Student Portfolio</title>
-
-    <!-- SEO Addition: Meta Description for search results -->
-    <meta name="description" content="Welcome to the portfolio of Surya Nallamothu, a passionate AI & Data Science student and web developer. Explore my projects in machine learning, ReactJS, and more.">
-
-    <!-- SEO Addition: Canonical URL to prevent duplicate content issues -->
+    <title>Surya Nallamothu | Software Engineer & AI Developer</title>
+    <meta name="description" content="Portfolio of Surya Nallamothu, a Software Engineer and AI & Data Science specialist. Explore my experience in scalable web applications, machine learning, and enterprise tech solutions.">
     <link rel="canonical" href="https://suryanallamothu.vercel.app/" />
     
-    <!-- SEO Addition: Google Site Verification Tag -->
-    <!-- IMPORTANT: Go to Google Search Console, get your HTML verification tag, and paste it here replacing this line. -->
-   <meta name="google-site-verification" content="cfQ0Lfw6NfVC8k3PkBnhRC5Jv_UwLqxi9IlUlaqMxYE" />
+    <meta name="google-site-verification" content="cfQ0Lfw6NfVC8k3PkBnhRC5Jv_UwLqxi9IlUlaqMxYE" />
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Modern Fonts: Inter for a sleek, technical look -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-<!-- SEO Addition: Favicon Links -->
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-<link rel="manifest" href="site.webmanifest">
+    <!-- Favicon Links -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
     
     <style>
-        /* Your CSS styles remain unchanged... */
         :root {
-            --google-blue: #4285f4;
-            --google-red: #ea4335;
-            --google-yellow: #fbbc05;
-            --google-green: #34a853;
-            --google-gray: #5f6368;
-            --transition-speed: 0.3s;
-            --transition-timing: ease-in-out;
-            --skeleton-bg: #e0e0e0;
-            --skeleton-shimmer: #f5f5f5;
+            /* Premium Dark Theme Variables */
+            --bg-main: #09090b;
+            --bg-surface: #18181b;
+            --bg-surface-hover: #27272a;
+            --text-primary: #f4f4f5;
+            --text-secondary: #a1a1aa;
+            --accent-primary: #3b82f6;
+            --accent-secondary: #8b5cf6;
+            --accent-gradient: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            --border-color: #3f3f46;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif; }
-        html { scroll-behavior: smooth; }
-        body { background: #fff; color: #202124; line-height: 1.6; }
-        .google-font { font-family: 'Google Sans', sans-serif; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
 
-        /* SKELETON LOADER STYLES */
-        #skeleton-loader { transition: opacity 0.5s ease-out; }
-        #skeleton-loader.fade-out { opacity: 0; }
-        .skeleton { background-color: var(--skeleton-bg); position: relative; overflow: hidden; }
-        .skeleton::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(90deg, var(--skeleton-bg), var(--skeleton-shimmer), var(--skeleton-bg)); animation: shimmer 1.5s infinite linear; }
-        @keyframes shimmer { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
-        .skeleton-avatar { border-radius: 50%; width: 250px; height: 250px; margin: 0 auto 24px; }
-        .skeleton-text { height: 1em; border-radius: 4px; margin-bottom: 0.75em; }
-        .skeleton-button { width: 120px; height: 48px; border-radius: 24px; }
-        .skeleton-card { background: #f0f0f0; border-radius: 8px; padding: 24px; }
-        .skeleton-preview { width: 100%; aspect-ratio: 16 / 10; border-radius: 8px 8px 0 0; }
-        .w-80 { width: 80%; } .w-60 { width: 60%; } .w-40 { width: 40%; }
-        .d-flex { display: flex; } .gap-2 { gap: 16px; }
-        .justify-center { justify-content: center; } .mt-2 { margin-top: 16px; }
+        html {
+            scroll-behavior: smooth;
+        }
 
-        /* Main Content Hiding/Showing */
-        #main-content { opacity: 0; visibility: hidden; transition: opacity 0.5s ease-in; }
-        #main-content.visible { opacity: 1; visibility: visible; }
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-primary);
+            line-height: 1.7;
+            overflow-x: hidden;
+            background-image: radial-gradient(circle at top right, rgba(59, 130, 246, 0.05), transparent 40%),
+                              radial-gradient(circle at bottom left, rgba(139, 92, 246, 0.05), transparent 40%);
+        }
+
+        /* --- Scrollbar --- */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-main); }
+        ::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--text-secondary); }
+
+        /* --- Typography & Utilities --- */
+        .gradient-text {
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
         
-        /* Animation Styles */
-        .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s var(--transition-timing), transform 0.8s var(--transition-timing); }
-        .reveal.visible { opacity: 1; transform: translateY(0); }
-        .hero-content > *:nth-child(1) { transition-delay: 0.1s; }
-        .hero-content > *:nth-child(2) { transition-delay: 0.2s; }
-        .hero-content > *:nth-child(3) { transition-delay: 0.3s; }
-        .hero-content > *:nth-child(4) { transition-delay: 0.4s; }
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
 
-        /* Navigation */
-        nav { background: #fff; box-shadow: 0 2px 6px rgba(0,0,0,0.1); position: fixed; width: 100%; z-index: 1000; padding: 8px 24px; }
-        .nav-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-        .nav-logo { font-size: 22px; font-weight: 500; color: var(--google-gray); text-decoration: none; transition: color var(--transition-speed) var(--transition-timing); }
-        .nav-logo:hover { color: var(--google-blue); }
-        .nav-links { display: flex; gap: 24px; }
-        .nav-links a { color: var(--google-gray); text-decoration: none; font-size: 14px; font-weight: 500; padding: 8px 16px; border-radius: 24px; transition: background var(--transition-speed), color var(--transition-speed), transform var(--transition-speed) var(--transition-timing); }
-        .nav-links a:hover { background: #f1f3f4; color: var(--google-blue); transform: translateY(-2px); }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
 
-        /* Hero Section */
-        .hero { padding: 120px 24px 80px; background: #f8f9fa; text-align: center; overflow: hidden; }
-        .hero-content { max-width: 800px; margin: 0 auto; }
-        .hero h1 { font-size: 48px; color: #202124; margin-bottom: 16px; }
-        .hero p { font-size: 18px; color: var(--google-gray); margin-bottom: 32px; }
-        .google-button { background: var(--google-blue); color: white; padding: 12px 24px; border-radius: 24px; text-decoration: none; font-weight: 500; display: inline-block; margin: 8px; transition: box-shadow var(--transition-speed), transform var(--transition-speed) var(--transition-timing); }
-        .google-button:hover { box-shadow: 0 4px 12px rgba(66,133,244,0.4); transform: scale(1.05); }
+        /* --- Navigation --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(9, 9, 11, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 16px 0;
+            transition: var(--transition);
+        }
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 32px;
+        }
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
 
-        /* Sections, Cards, Forms, Footer etc. */
-        section { padding: 80px 24px; }
-        .section-content { max-width: 1200px; margin: 0 auto; }
-        .section-title { font-size: 32px; color: #202124; margin-bottom: 48px; text-align: center; }
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-bottom: 48px; }
-        .skill-card { background: white; border-radius: 8px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.12); transition: box-shadow var(--transition-speed), transform var(--transition-speed) var(--transition-timing); }
-        .skill-card:hover { box-shadow: 0 6px 15px rgba(0,0,0,0.1); transform: translateY(-5px); }
-        .skill-card h3 { color: var(--google-blue); margin-bottom: 16px; }
-        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 32px; }
-        .project-card { background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.12); transition: transform var(--transition-speed) var(--transition-timing), box-shadow var(--transition-speed) var(--transition-timing); display: flex; flex-direction: column; }
-        .project-card:hover { transform: translateY(-8px); box-shadow: 0 8px 20px rgba(0,0,0,0.12); }
-        .project-preview { width: 100%; aspect-ratio: 16 / 10; border: none; background: #f8f9fa; pointer-events: none; }
-        .project-content { padding: 20px; display: flex; flex-direction: column; flex-grow: 1; }
-        .project-title { color: #202124; margin-bottom: 8px; }
-        .project-description { color: var(--google-gray); font-size: 14px; margin-bottom: 16px; flex-grow: 1; }
-        .project-footer { margin-top: auto; display: flex; justify-content: space-between; align-items: center; }
-        .project-links a { color: var(--google-gray); font-size: 22px; text-decoration: none; transition: color var(--transition-speed), transform var(--transition-speed) var(--transition-timing); margin-left: 16px; }
-        .project-links a:hover { color: var(--google-blue); transform: scale(1.15); }
-        .contact-form { max-width: 600px; margin: 0 auto; padding: 32px; background: white; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.12); }
-        .form-group { margin-bottom: 24px; }
-        .form-group label { display: block; margin-bottom: 8px; color: var(--google-gray); }
-        .form-group input, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #dadce0; border-radius: 4px; font-size: 16px; transition: border-color var(--transition-speed); }
-        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--google-blue); }
-        footer { background: #f8f9fa; padding: 48px 24px; text-align: center; }
-        .social-links { margin-top: 24px; }
-        .social-links a { color: var(--google-gray); margin: 0 12px; font-size: 20px; text-decoration: none; transition: color var(--transition-speed), transform var(--transition-speed) var(--transition-timing); display: inline-block; }
-        .social-links a:hover { color: var(--google-blue); transform: translateY(-3px) scale(1.1); }
-        @media (max-width: 768px) { .nav-links { display: none; } .hero h1 { font-size: 36px; } }
-        .profile-picture-container { margin-bottom: 24px; display: flex; justify-content: center; }
-        .profile-picture { width: 250px; height: 250px; border-radius: 50%; object-fit: cover; border: 0.2px solid white; box-shadow: 0 3px 9px rgba(0,0,0,0.1); transition: transform var(--transition-speed) ease; }
-        .profile-picture:hover { transform: scale(1.05); }
+        /* --- Hero Section --- */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 24px 60px;
+            position: relative;
+        }
+        .profile-container {
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+        .profile-pic {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid transparent;
+            background: linear-gradient(var(--bg-main), var(--bg-main)) padding-box,
+                        var(--accent-gradient) border-box;
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.2);
+            transition: var(--transition);
+        }
+        .profile-pic:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 50px rgba(139, 92, 246, 0.4);
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+        }
+        .btn-primary {
+            background: var(--accent-gradient);
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
+        }
+        .btn-secondary {
+            background: var(--bg-surface);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+        }
+        .btn-secondary:hover {
+            background: var(--bg-surface-hover);
+            transform: translateY(-2px);
+        }
+        .hero-btns {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+        }
+
+        /* --- Sections Shared --- */
+        section {
+            padding: 100px 0;
+            border-top: 1px solid rgba(255,255,255,0.02);
+        }
+
+        /* --- Grid Layouts --- */
+        .two-col-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        /* --- Cards --- */
+        .card {
+            background: var(--bg-surface);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 32px;
+            transition: var(--transition);
+        }
+        .card:hover {
+            border-color: rgba(255,255,255,0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        /* --- Experience Timeline --- */
+        .timeline {
+            position: relative;
+            padding-left: 32px;
+            border-left: 2px solid var(--border-color);
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+        }
+        .timeline-item:last-child { margin-bottom: 0; }
+        .timeline-dot {
+            position: absolute;
+            left: -41px;
+            top: 4px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--bg-main);
+            border: 2px solid var(--accent-primary);
+        }
+        .timeline-date {
+            font-size: 0.85rem;
+            color: var(--accent-primary);
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: block;
+        }
+        .timeline-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .timeline-company {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+        }
+        .timeline-desc {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+        .timeline-desc li {
+            margin-bottom: 8px;
+            margin-left: 16px;
+        }
+
+        /* --- Projects --- */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+        }
+        .project-card {
+            background: var(--bg-surface);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition);
+        }
+        .project-card:hover {
+            border-color: rgba(59, 130, 246, 0.3);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .project-content {
+            padding: 32px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .project-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+        .project-desc {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 24px;
+            flex-grow: 1;
+        }
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+        .tech-tag {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-secondary);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        .project-links {
+            display: flex;
+            gap: 16px;
+        }
+        .project-link {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+        }
+        .project-link:hover {
+            color: var(--accent-primary);
+        }
+
+        /* --- Skills --- */
+        .skills-category {
+            margin-bottom: 32px;
+        }
+        .skills-category h3 {
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+        .skills-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .skill-badge {
+            background: var(--bg-surface);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition);
+        }
+        .skill-badge:hover {
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--text-primary);
+            border-color: rgba(59, 130, 246, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* --- Contact & Footer --- */
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 1.1rem;
+        }
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--bg-surface);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-primary);
+            font-size: 1.2rem;
+        }
+        .contact-item a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        .contact-item a:hover {
+            color: var(--accent-primary);
+        }
+        
+        footer {
+            padding: 40px 24px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        .social-footer {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 16px;
+        }
+        .social-footer a {
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+        .social-footer a:hover {
+            color: var(--accent-primary);
+            transform: translateY(-3px);
+        }
+
+        /* --- Animations --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- Mobile Responsiveness --- */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2.5rem; }
+            .two-col-grid { grid-template-columns: 1fr; }
+            .hero-btns { flex-direction: column; }
+            .btn { width: 100%; justify-content: center; }
+        }
     </style>
 
-    <!-- SEO Addition: JSON-LD Schema Markup for "Person" -->
-    <!-- This code explicitly tells Google who you are, what you do, and what your social profiles are. -->
+    <!-- JSON-LD Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -136,11 +467,7 @@
         "https://linkedin.com/in/ayyappa-venkata-surya-nallamothu",
         "https://github.com/ayyappavenkatasurya"
       ],
-      "jobTitle": "AI & Data Science Student",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Seshadri Rao Gudlavalleru Engineering College"
-      },
+      "jobTitle": "Software Engineer & AI Developer",
       "alumniOf": {
         "@type": "CollegeOrUniversity",
         "name": "Seshadri Rao Gudlavalleru Engineering College"
@@ -150,181 +477,342 @@
 </head>
 <body>
 
-    <div id="skeleton-loader">
-        <!-- Skeleton loader HTML remains unchanged... -->
-        <div class="hero" style="padding-top: 184px; padding-bottom: 144px;">
-             <div class="skeleton skeleton-avatar"></div>
-             <div class="skeleton skeleton-text w-60" style="margin: 0 auto 16px;"></div>
-             <div class="skeleton skeleton-text w-40" style="margin: 0 auto 32px;"></div>
-             <div class="d-flex justify-center gap-2">
-                <div class="skeleton skeleton-button"></div>
-                <div class="skeleton skeleton-button"></div>
-             </div>
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-content">
+            <a href="#" class="nav-logo">Surya<span class="gradient-text">.dev</span></a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </div>
         </div>
-        <section id="skeleton-projects">
-            <div class="section-content">
-                <div class="skeleton skeleton-text w-40" style="height: 2em; margin: 0 auto 48px;"></div>
-                <div class="projects-grid">
-                    <div class="skeleton-card" style="padding: 0; background: transparent;"><div class="skeleton skeleton-preview"></div><div style="padding: 20px;"><div class="skeleton skeleton-text w-80"></div><div class="skeleton skeleton-text w-60"></div><div class="skeleton skeleton-text w-80 mt-2"></div></div></div>
-                    <div class="skeleton-card" style="padding: 0; background: transparent;"><div class="skeleton skeleton-preview"></div><div style="padding: 20px;"><div class="skeleton skeleton-text w-80"></div><div class="skeleton skeleton-text w-60"></div><div class="skeleton skeleton-text w-80 mt-2"></div></div></div>
-                    <div class="skeleton-card" style="padding: 0; background: transparent;"><div class="skeleton skeleton-preview"></div><div style="padding: 20px;"><div class="skeleton skeleton-text w-80"></div><div class="skeleton skeleton-text w-60"></div><div class="skeleton skeleton-text w-80 mt-2"></div></div></div>
-                </div>
-            </div>
-        </section>
-    </div>
+    </nav>
 
-    <div id="main-content">
-        <nav>
-            <div class="nav-content">
-                <a href="#" class="nav-logo google-font">Surya Nallamothu</a>
-                <div class="nav-links google-font">
-                    <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="profile-container reveal">
+                <img src="surya-nallamothu.jpg" alt="Surya Nallamothu" class="profile-pic" onerror="this.src='https://ui-avatars.com/api/?name=Surya+Nallamothu&background=0D8ABC&color=fff&size=200'">
+            </div>
+            <h1 class="reveal" style="transition-delay: 0.1s;">Hi, I'm <span class="gradient-text">Surya Nallamothu</span></h1>
+            <p class="reveal" style="transition-delay: 0.2s;">Software Engineer bridging the gap between highly scalable full-stack applications and cutting-edge Artificial Intelligence.</p>
+            <div class="hero-btns reveal" style="transition-delay: 0.3s;">
+                <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-layer-group"></i> View Work</a>
+                <a href="#contact" class="btn btn-secondary"><i class="fa-solid fa-paper-plane"></i> Contact Me</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About & Education -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title reveal">About <span class="gradient-text">Me</span></h2>
+            <div class="two-col-grid">
+                <div class="card reveal">
+                    <h3 style="margin-bottom: 16px; font-size: 1.5rem;">My Background</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 24px;">
+                        I am Nallamothu Ayyappa Venkata Surya, a passionate Software Engineer holding a B.Tech in Artificial Intelligence & Data Science from Seshadri Rao Gudlavalleru Engineering College. I specialize in developing scalable software tools, secure database interfaces, and seamlessly integrating complex AI models into production environments.
+                    </p>
+                    <p style="color: var(--text-secondary);">
+                        I thrive in complex technical environments, focusing heavily on robust software methodologies, system optimization, and writing clean, scalable code.
+                    </p>
+                </div>
+                
+                <div class="card reveal" style="transition-delay: 0.2s;">
+                    <h3 style="margin-bottom: 24px; font-size: 1.5rem;">Education & Honors</h3>
+                    
+                    <div style="margin-bottom: 24px;">
+                        <h4 style="font-size: 1.1rem; color: var(--text-primary);">B.Tech in Artificial Intelligence and Data Science</h4>
+                        <p style="color: var(--accent-primary); font-weight: 500; font-size: 0.9rem;">Seshadri Rao Gudlavalleru Engineering College (2022 - 2026)</p>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem;">CGPA: 9.09 / 10</p>
+                    </div>
+
+                    <div style="margin-bottom: 24px;">
+                        <h4 style="font-size: 1.1rem; color: var(--text-primary);">Intermediate Education (MPC)</h4>
+                        <p style="color: var(--accent-primary); font-weight: 500; font-size: 0.9rem;">Sri Chaitanya Junior College (2020 - 2022)</p>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem;">Percentage: 92.5%</p>
+                    </div>
+
+                    <h4 style="font-size: 1rem; color: var(--text-primary); margin-bottom: 12px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 16px;">Certifications</h4>
+                    <ul style="color: var(--text-secondary); font-size: 0.9rem; list-style-position: inside;">
+                        <li>Getting Started with Data Analytics - AWS</li>
+                        <li>Visualizing Data with Python - IBM</li>
+                        <li>Google AI for Anyone - Google</li>
+                        <li>Social Networks - NPTEL</li>
+                    </ul>
                 </div>
             </div>
-        </nav>
-        <section class="hero">
-            <div class="hero-content">
-                <div class="profile-picture-container reveal">
-                    <!-- SEO Change: Improved Image Alt Text -->
-                    <img src="surya-nallamothu.jpg" alt="Photo of Surya Nallamothu, AI and Data Science Student" class="profile-picture">
+        </div>
+    </section>
+
+    <!-- Professional Experience -->
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title reveal">Professional <span class="gradient-text">Experience</span></h2>
+            <div class="card reveal" style="max-width: 900px; margin: 0 auto; padding: 48px;">
+                <div class="timeline">
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <span class="timeline-date">May 2026 - July 2026</span>
+                        <h3 class="timeline-title">AI & Machine Learning Intern</h3>
+                        <p class="timeline-company">Coastal Seven Technologies</p>
+                        <ul class="timeline-desc">
+                            <li>Designed and implemented high-performance software pipelines and deep learning models to process large-scale datasets.</li>
+                            <li>Collaborated with engineering teams to optimize software architectures and improve prediction accuracy through iterative scripting and testing.</li>
+                        </ul>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <span class="timeline-date">Sep 2025 - Mar 2026</span>
+                        <h3 class="timeline-title">Full Stack Development (MERN) Intern</h3>
+                        <p class="timeline-company">SmartBridge (APSCHE)</p>
+                        <ul class="timeline-desc">
+                            <li>Developed full-stack software tools and interfaces using the MERN stack to automate data workflows.</li>
+                            <li>Optimized database schemas and RESTful APIs to ensure efficient data rendering and low-latency system performance.</li>
+                        </ul>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <span class="timeline-date">May 2024 - June 2024</span>
+                        <h3 class="timeline-title">Generative AI Intern</h3>
+                        <p class="timeline-company">Smart Internz (APSCHE)</p>
+                        <ul class="timeline-desc">
+                            <li>Built automated software applications using Large Language Models (LLMs) for efficient text generation and data processing.</li>
+                            <li>Designed and optimized targeted prompts to improve the consistency and contextual accuracy of software outputs.</li>
+                        </ul>
+                    </div>
+
                 </div>
-                <!-- SEO Change: Prioritized "Surya Nallamothu" in H1 heading -->
-                <h1 class="google-font reveal">Surya Nallamothu</h1>
-                <p class="reveal">AI & Data Science Student | Web Developer</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Selected Projects -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title reveal">Selected <span class="gradient-text">Projects</span></h2>
+            
+            <div class="projects-grid">
+                
+                <!-- Project: Magicnode -->
+                <div class="project-card reveal">
+                    <div class="project-content">
+                        <h3 class="project-title">Magicnode Gateway</h3>
+                        <p class="project-desc">
+                            A highly scalable, decentralized Enterprise WhatsApp OTP Gateway API. Engineered utilizing the Signal Protocol via WebSockets with a Zero-Trust data architecture to seamlessly and securely route enterprise authentications.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">WebSockets</span>
+                            <span class="tech-tag">WhatsApp API</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://magicnode.suryawave.dev/" target="_blank" class="project-link">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Application
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project: Animetalk -->
+                <div class="project-card reveal" style="transition-delay: 0.1s;">
+                    <div class="project-content">
+                        <h3 class="project-title">Animetalk 3D AI</h3>
+                        <p class="project-desc">
+                            An advanced real-time 3D AI Avatar platform. Features zero-latency WebRTC P2P communication, neural lip-syncing for 60FPS audio-to-viseme translation, and multilingual cognitive generation for immersive interactions.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">WebRTC</span>
+                            <span class="tech-tag">Generative AI</span>
+                            <span class="tech-tag">WebGL</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://animetalk.suryawave.dev/" target="_blank" class="project-link">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Application
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project: Surya Wave -->
+                <div class="project-card reveal" style="transition-delay: 0.2s;">
+                    <div class="project-content">
+                        <h3 class="project-title">Surya Wave Platform</h3>
+                        <p class="project-desc">
+                            An enterprise-grade digital solutions platform engineered to deliver comprehensive web applications, ATS integrations, and AI models for B2B and technical academic deployments. 
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Next.js</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">Tailwind</span>
+                            <span class="tech-tag">AWS Cloud</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://www.suryawave.dev/" target="_blank" class="project-link">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Application
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project: DDSVC -->
+                <div class="project-card reveal" style="transition-delay: 0.3s;">
+                    <div class="project-content">
+                        <h3 class="project-title">DDSVC Voice AI</h3>
+                        <p class="project-desc">
+                            Developed a complex Zero-Shot Voice Conversion AI Model focusing on high algorithmic efficiency and absolute software stability. Resulted in an authored and presented research paper at the CRM 2026 technical conference.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">PyTorch / TF</span>
+                            <span class="tech-tag">Deep Learning</span>
+                            <span class="tech-tag">NLP</span>
+                        </div>
+                        <div class="project-links">
+                            <span class="project-link" style="color: var(--text-secondary); cursor: default;">
+                                <i class="fa-solid fa-file-lines"></i> Research Publication
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title reveal">Technical <span class="gradient-text">Competencies</span></h2>
+            
+            <div class="card reveal" style="padding: 48px;">
+                <div class="skills-category">
+                    <h3>Programming Languages</h3>
+                    <div class="skills-wrap">
+                        <div class="skill-badge"><i class="fa-brands fa-python"></i> Python</div>
+                        <div class="skill-badge"><i class="fa-brands fa-js"></i> JavaScript</div>
+                        <div class="skill-badge"><i class="fa-solid fa-code"></i> TypeScript</div>
+                        <div class="skill-badge"><i class="fa-brands fa-golang"></i> Go</div>
+                        <div class="skill-badge"><i class="fa-solid fa-c"></i> C</div>
+                    </div>
+                </div>
+
+                <div class="skills-category">
+                    <h3>Frameworks & Libraries</h3>
+                    <div class="skills-wrap">
+                        <div class="skill-badge"><i class="fa-brands fa-react"></i> React / Next.js</div>
+                        <div class="skill-badge"><i class="fa-brands fa-node"></i> MERN Stack</div>
+                        <div class="skill-badge"><i class="fa-solid fa-fire"></i> Flask & Django</div>
+                        <div class="skill-badge"><i class="fa-solid fa-mobile-screen"></i> Flutter</div>
+                        <div class="skill-badge"><i class="fa-brands fa-react"></i> React Native</div>
+                    </div>
+                </div>
+
+                <div class="skills-category" style="margin-bottom: 0;">
+                    <h3>Tools, Cloud & Databases</h3>
+                    <div class="skills-wrap">
+                        <div class="skill-badge"><i class="fa-brands fa-aws"></i> AWS</div>
+                        <div class="skill-badge"><i class="fa-brands fa-google"></i> Google Cloud</div>
+                        <div class="skill-badge"><i class="fa-solid fa-database"></i> MongoDB / PostgreSQL</div>
+                        <div class="skill-badge"><i class="fa-solid fa-server"></i> Firebase / Unix</div>
+                        <div class="skill-badge"><i class="fa-solid fa-brain"></i> Generative AI & NLP</div>
+                        <div class="skill-badge"><i class="fa-solid fa-chart-line"></i> Data Analytics</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title reveal">Get In <span class="gradient-text">Touch</span></h2>
+            
+            <div class="two-col-grid" style="align-items: center; max-width: 1000px; margin: 0 auto;">
                 <div class="reveal">
-                    <a href="mailto:ayyappanallamothu4@gmail.com" class="google-button" style="background: #000000;">Contact Me</a>
-                    <a href="https://linkedin.com/in/ayyappa-venkata-surya-nallamothu" class="google-button" style="background: #275ae7;">LinkedIn</a>
-                </div>
-            </div>
-        </section>
-        <section id="about">
-            <!-- Rest of your body content remains the same... -->
-            <div class="section-content">
-                <h2 class="section-title google-font reveal">About Me</h2>
-                <div class="skill-card reveal">
-                    <p style="margin-bottom: 24px;">A driven and enthusiastic individual pursuing B.Tech in Artificial Intelligence & Data Science at Seshadri Rao Gudlavalleru Engineering College. My full name is Nallamothu Ayyappa Venkata Surya, and I am passionate about designing scalable web applications and leveraging AI to solve real-world problems.</p>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
-                        <div>
-                            <h3 class="google-font">Education</h3>
-                            <div style="margin-bottom: 16px;"><p style="font-weight: 500;">B.Tech in AI & Data Science</p><p>Seshadri Rao Gudlavalleru Engineering College</p><p style="color: var(--google-gray);">2022 - 2025 | CGPA: 9.07/10</p></div>
-                            <div><p style="font-weight: 500;">Intermediate, MPC</p><p>Sri Chaitanya Junior College</p><p style="color: var(--google-gray);">2020 - 2022 | Percentage: 92.5%</p></div>
+                    <h3 style="font-size: 2rem; margin-bottom: 16px;">Let's build something amazing together.</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 32px; font-size: 1.1rem;">
+                        I'm currently looking for full-time software engineering and AI roles. Whether you have a question, an opportunity, or just want to say hi, I'll try my best to get back to you!
+                    </p>
+                    
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                            <a href="mailto:ayyappanallamothu4@gmail.com">ayyappanallamothu4@gmail.com</a>
                         </div>
-                        <div>
-                            <h3 class="google-font">Languages</h3>
-                            <div style="display: flex; margin-bottom: 8px;"><span style="width: 80px;">English:</span><span style="color: var(--google-gray);">Fluent</span></div>
-                            <div style="display: flex;"><span style="width: 80px;">Telugu:</span><span style="color: var(--google-gray);">Native</span></div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                            <a href="tel:+919392567247">+91 9392567247</a>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <section id="skills" style="background: #f8f9fa;">
-            <div class="section-content">
-                <h2 class="section-title google-font reveal">Technical Skills</h2>
-                <div class="skills-grid">
-                    <div class="skill-card reveal">
-                        <h3 class="google-font">Programming Languages</h3>
-                        <div style="display: flex; flex-direction: column; gap: 12px;">
-                            <div style="display: flex; align-items: center;"><i class="fab fa-python" style="color: var(--google-blue); margin-right: 12px;"></i>Python</div>
-                            <div style="display: flex; align-items: center;"><i class="fas fa-code" style="color: var(--google-blue); margin-right: 12px;"></i>C</div>
-                        </div>
-                    </div>
-                    <div class="skill-card reveal" style="transition-delay: 0.2s;">
-                        <h3 class="google-font">Web Technologies</h3>
-                        <div style="display: flex; flex-direction: column; gap: 12px;">
-                            <div style="display: flex; align-items: center;"><i class="fab fa-html5" style="color: var(--google-red); margin-right: 12px;"></i>HTML</div>
-                            <div style="display: flex; align-items: center;"><i class="fab fa-css3-alt" style="color: var(--google-red); margin-right: 12px;"></i>CSS</div>
-                            <div style="display: flex; align-items: center;"><i class="fab fa-js" style="color: var(--google-red); margin-right: 12px;"></i>JavaScript</div>
-                            <div style="display: flex; align-items: center;"><i class="fab fa-node" style="color: var(--google-red); margin-right: 12px;"></i>NodeJS</div>
-                            <div style="display: flex; align-items: center;"><i class="fab fa-react" style="color: var(--google-red); margin-right: 12px;"></i>ReactJS</div>
-                        </div>
-                    </div>
-                    <div class="skill-card reveal" style="transition-delay: 0.4s;">
-                        <h3 class="google-font">AI & Machine Learning</h3>
-                        <div style="display: flex; flex-direction: column; gap: 12px;">
-                            <div style="display: flex; align-items: center;"><i class="fas fa-brain" style="color: var(--google-green); margin-right: 12px;"></i>Machine Learning Models</div>
-                            <div style="display: flex; align-items: center;"><i class="fas fa-robot" style="color: var(--google-green); margin-right: 12px;"></i>Deep Learning (TensorFlow)</div>
-                            <div style="display: flex; align-items: center;"><i class="fas fa-comment-dots" style="color: var(--google-green); margin-right: 12px;"></i>Natural Language Processing</div>
-                        </div>
-                    </div>
-                     <div class="skill-card reveal" style="transition-delay: 0.6s;">
-                        <h3 class="google-font">Databases</h3>
-                        <div style="display: flex; flex-direction: column; gap: 12px;">
-                            <div style="display: flex; align-items: center;"><i class="fas fa-database" style="color: var(--google-blue); margin-right: 12px;"></i>MongoDB</div>
-                            <div style="display: flex; align-items: center;"><i class="fas fa-database" style="color: var(--google-blue); margin-right: 12px;"></i>MySQL</div>
-                            <div style="display: flex; align-items: center;"><i class="fas fa-database" style="color: var(--google-blue); margin-right: 12px;"></i>Oracle</div>
-                        </div>
-                    </div>
-                    <div class="skill-card reveal">
-                        <h3 class="google-font">Cloud & Tools</h3>
-                        <div style="display: flex; flex-direction: column; gap: 12px;">
-                            <div style="display: flex; align-items: center;"><i class="fas fa-cloud" style="color: var(--google-yellow); margin-right: 12px;"></i>Cloud (AWS, GCP)</div>
-                            <div style="display: flex; align-items: center;"><i class="fas fa-server" style="color: var(--google-yellow); margin-right: 12px;"></i>Vercel Deployment</div>
-                            <div style="display: flex; align-items: center;"><i class="fab fa-git-alt" style="color: var(--google-yellow); margin-right: 12px;"></i>Git & GitHub</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="projects">
-            <div class="section-content">
-                <h2 class="section-title google-font reveal">Projects</h2>
-                <div class="projects-grid">
-                    <div class="project-card reveal"><iframe class="project-preview" src="https://miniappecom.vercel.app/" title="Mini E-commerce Platform Preview" loading="lazy"></iframe><div class="project-content"><h3 class="project-title google-font">Mini E-commerce Platform</h3><p class="project-description">A compact e-commerce app demonstrating product display, cart management, and user interaction.</p><div class="project-footer"><div class="project-links"><a href="https://miniappecom.vercel.app/" target="_blank" rel="noopener noreferrer" title="Live Demo"><i class="fas fa-external-link-alt"></i></a><a href="https://github.com/ayyappavenkatasurya/surya-ecommerce" target="_blank" rel="noopener noreferrer" title="View Code"><i class="fab fa-github"></i></a></div></div></div></div>
-                    <div class="project-card reveal"><iframe class="project-preview" src="https://surya-gecchatbot.vercel.app/" title="GEC College AI Chatbot Preview" loading="lazy"></iframe><div class="project-content"><h3 class="project-title google-font">GEC College AI Chatbot</h3><p class="project-description">An intelligent chatbot for Gudlavalleru Engineering College to answer student queries using AI.</p><div class="project-footer"><div class="project-links"><a href="https://surya-gecchatbot.vercel.app/" target="_blank" rel="noopener noreferrer" title="Live Demo"><i class="fas fa-external-link-alt"></i></a><a href="https://github.com/ayyappavenkatasurya/surya-gecchatbot" target="_blank" rel="noopener noreferrer" title="View Code"><i class="fab fa-github"></i></a></div></div></div></div>
-                    <div class="project-card reveal"><iframe class="project-preview" src="https://bujjiaisearch.vercel.app/" title="Bujji AI Search Engine Preview" loading="lazy"></iframe><div class="project-content"><h3 class="project-title google-font">Bujji AI Search Engine</h3><p class="project-description">An AI-enhanced search engine providing intelligent and context-aware results for improved relevance.</p><div class="project-footer"><div class="project-links"><a href="https://bujjiaisearch.vercel.app/" target="_blank" rel="noopener noreferrer" title="Live Demo"><i class="fas fa-external-link-alt"></i></a><a href="https://github.com/nallamothusurya/surya-bujji-ai-search" target="_blank" rel="noopener noreferrer" title="View Code"><i class="fab fa-github"></i></a></div></div></div></div>
-                    <div class="project-card reveal"><iframe class="project-preview" src="https://chitti-zeta.vercel.app/" title="Chitti AI Assistant Preview" loading="lazy"></iframe><div class="project-content"><h3 class="project-title google-font">Chitti AI Assistant</h3><p class="project-description">An interactive AI assistant built to engage with users in a friendly, conversational manner.</p><div class="project-footer"><div class="project-links"><a href="https://chitti-zeta.vercel.app/" target="_blank" rel="noopener noreferrer" title="Live Demo"><i class="fas fa-external-link-alt"></i></a><a href="https://github.com/nallamothusurya/surya-bujji-robot" target="_blank" rel="noopener noreferrer" title="View Code"><i class="fab fa-github"></i></a></div></div></div></div>
-                    <div class="project-card reveal"><iframe class="project-preview" src="https://surya-virtual-piano.vercel.app/" title="Interactive Virtual Piano Preview" loading="lazy"></iframe><div class="project-content"><h3 class="project-title google-font">Interactive Virtual Piano</h3><p class="project-description">A responsive virtual piano allowing users to play music directly in their browser with keyboard or mouse.</p><div class="project-footer"><div class="project-links"><a href="https://surya-virtual-piano.vercel.app/" target="_blank" rel="noopener noreferrer" title="Live Demo"><i class="fas fa-external-link-alt"></i></a><a href="https://github.com/nallamothusurya/surya-virtual-piano" target="_blank" rel="noopener noreferrer" title="View Code"><i class="fab fa-github"></i></a></div></div></div></div>
-                    <div class="project-card reveal"><iframe class="project-preview" src="https://camel-radius.vercel.app/" title="Camel Radius Web Tools Preview" loading="lazy"></iframe><div class="project-content"><h3 class="project-title google-font">Camel Radius - Web Tools</h3><p class="project-description">A collection of handy web-based utility tools for various tasks, designed for simplicity and efficiency.</p><div class="project-footer"><div class="project-links"><a href="https://camel-radius.vercel.app/" target="_blank" rel="noopener noreferrer" title="Live Demo"><i class="fas fa-external-link-alt"></i></a><a href="https://github.com/nallamothusurya/surya-camel-tools" target="_blank" rel="noopener noreferrer" title="View Code"><i class="fab fa-github"></i></a></div></div></div></div>
-                </div>
-            </div>
-        </section>
-        <section id="contact" style="background: #f8f9fa;">
-            <div class="section-content">
-                <h2 class="section-title google-font reveal">Get In Touch</h2>
-                <div class="contact-form reveal"><form action="https://formspree.io/f/your_form_id" method="POST"><div class="form-group"><label for="name">Name</label><input type="text" id="name" name="name" required></div><div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email" required></div><div class="form-group"><label for="message">Message</label><textarea id="message" name="message" rows="4" required></textarea></div><button type="submit" class="google-button" style="width: 100%; border: transparent;">Send Message</button></form></div>
-                <div style="text-align: center; margin-top: 48px;" class="reveal">
-                    <div style="margin-bottom: 24px;"><p style="font-weight: 500; color: #202124;">Contact Information</p><p style="color: var(--google-gray);">Feel free to reach out through any of these channels</p></div>
-                    <div style="display: flex; justify-content: center; gap: 32px; flex-wrap: wrap;"><a href="mailto:ayyappanallamothu4@gmail.com" style="display: flex; align-items: center; text-decoration: none; color: var(--google-gray);"><i class="fas fa-envelope" style="margin-right: 8px;"></i>ayyappanallamothu4@gmail.com</a><a href="tel:+919392567247" style="display: flex; align-items: center; text-decoration: none; color: var(--google-gray);"><i class="fas fa-phone" style="margin-right: 8px;"></i>+91 9392567247</a></div>
-                </div>
-            </div>
-        </section>
-        <footer>
-            <div class="section-content reveal">
-                <p style="color: var(--google-gray);">&copy; <span id="year"></span> Surya Nallamothu. All rights reserved.</p>
-                <div class="social-links">
-                    <a href="https://linkedin.com/in/ayyappa-venkata-surya-nallamothu" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/ayyappavenkatasurya" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="mailto:ayyappanallamothu4@gmail.com"><i class="fas fa-envelope"></i></a>
-                </div>
-            </div>
-        </footer>
-    </div>
 
+                <div class="card reveal" style="transition-delay: 0.2s;">
+                    <!-- Replace with your own form endpoint (e.g. Formspree / Web3Forms) -->
+                    <form action="https://formspree.io/f/your_form_id" method="POST" style="display: flex; flex-direction: column; gap: 16px;">
+                        <div>
+                            <label style="display: block; margin-bottom: 8px; color: var(--text-secondary);">Name</label>
+                            <input type="text" name="name" required style="width: 100%; padding: 14px; border-radius: 8px; background: rgba(0,0,0,0.2); border: 1px solid var(--border-color); color: white; outline: none;">
+                        </div>
+                        <div>
+                            <label style="display: block; margin-bottom: 8px; color: var(--text-secondary);">Email</label>
+                            <input type="email" name="email" required style="width: 100%; padding: 14px; border-radius: 8px; background: rgba(0,0,0,0.2); border: 1px solid var(--border-color); color: white; outline: none;">
+                        </div>
+                        <div>
+                            <label style="display: block; margin-bottom: 8px; color: var(--text-secondary);">Message</label>
+                            <textarea name="message" rows="4" required style="width: 100%; padding: 14px; border-radius: 8px; background: rgba(0,0,0,0.2); border: 1px solid var(--border-color); color: white; outline: none; resize: vertical;"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="margin-top: 8px; width: 100%; justify-content: center;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-footer">
+                <a href="https://linkedin.com/in/ayyappa-venkata-surya-nallamothu" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/ayyappavenkatasurya" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+            </div>
+            <p>&copy; <span id="year"></span> Surya Nallamothu. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const skeletonLoader = document.getElementById('skeleton-loader');
-            const mainContent = document.getElementById('main-content');
-            setTimeout(() => {
-                skeletonLoader.classList.add('fade-out');
-                mainContent.classList.add('visible');
-                setTimeout(() => {
-                    skeletonLoader.style.display = 'none';
-                    const revealElements = document.querySelectorAll('.reveal');
-                    const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
-                    const observer = new IntersectionObserver((entries, observer) => {
-                        entries.forEach(entry => {
-                            if (entry.isIntersecting) {
-                                entry.target.classList.add('visible');
-                                observer.unobserve(entry.target);
-                            }
-                        });
-                    }, observerOptions);
-                    revealElements.forEach(el => { observer.observe(el); });
-                }, 500);
-            }, 1500);
-        });
+        // Update Footer Year
         document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Scroll Animations (Intersection Observer)
+        document.addEventListener("DOMContentLoaded", () => {
+            const reveals = document.querySelectorAll(".reveal");
+
+            const revealOnScroll = new IntersectionObserver((entries, observer) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("active");
+                        observer.unobserve(entry.target); // Runs once
+                    }
+                });
+            }, { 
+                threshold: 0.1, 
+                rootMargin: "0px 0px -50px 0px" 
+            });
+
+            reveals.forEach((element) => {
+                revealOnScroll.observe(element);
+            });
+        });
     </script>
 </body>
 </html>
